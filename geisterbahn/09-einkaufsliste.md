@@ -1,3 +1,5 @@
+> ⚠️ **Überholt.** Die tatsächlich bestellte Liste steht in `11-einkaufsliste-final.md`.
+
 # 09 – Konkrete Einkaufsliste
 
 Nur die empfohlenen Produkte, nach **Bestellung sortiert** – so wie du sie
