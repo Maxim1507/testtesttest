@@ -106,9 +106,8 @@ Domains um:
 - **Erwartung:** Die Schweizer Shops sind servergerendert und funktionieren
   zuverlässig. AliExpress hat aggressiven Bot-Schutz — aus einem
   Rechenzentrums-IP landet man oft im Captcha. Das ist kein Fehler deinerseits.
-- **Fallback, wenn AliExpress blockt:** sag es Maxim klar und bitte ihn um
-  **Screenshots** der Trefferliste aus seinem Account. Er liest Screenshots gern,
-  und nur dort sieht man die echten Versandkosten in die Schweiz. Die Schweizer
+- **Fallback, wenn AliExpress blockt:** sag es Maxim klar. Die echten
+  Versandkosten in die Schweiz sieht man nur in seinem Account. Die Schweizer
   Preise holst du parallel selbst.
 - **Netzwerk niemals umgehen**, TLS-Prüfung nie deaktivieren, `HTTPS_PROXY` nie
   entfernen. Bei 403 vom Proxy: melden, nicht umrouten.

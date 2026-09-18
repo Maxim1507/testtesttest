@@ -282,9 +282,8 @@ Gruppe B von dir kommen.
 Die Trefferlisten sind davon nicht betroffen und waren durchgehend lesbar, deshalb
 stimmen die Artikelpreise.
 
-**Wenn du die Warenkörbe angelegt hast, schick mir Screenshots der
-Versandkostenzeilen** – dann rechne ich sauber durch, ob sich die Bündelung
-gelohnt hat.
+**Die Versandkosten stehen im Warenkorb** – sobald sie bekannt sind, lässt sich
+durchrechnen, ob sich die Bündelung gelohnt hat.
 
 ### 2 · Nebelmaschinen-Fernbedienung
 

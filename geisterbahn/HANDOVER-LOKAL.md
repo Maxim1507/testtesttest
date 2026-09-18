@@ -28,14 +28,6 @@ heraus (also mit Referrer), mobile Ansicht mit iPhone-Profil, drei Hosts
 (`de.`, `www.`, `m.aliexpress.com`). Alles landete auf derselben Challenge. Die
 Sperre hängt an der IP, nicht am Navigationsweg.
 
-### Was du nicht tun sollst
-
-Wenn du wider Erwarten auch lokal auf der Challenge landest: **keine
-Captcha-Lösungsdienste, keine IP-Rotation, keine Fingerprint-Tricks, die die
-Erkennung gezielt aushebeln.** Dann sag es Maxim und lass ihn die betroffenen
-Angaben von Hand abtippen oder als Screenshot schicken – das hat in der
-Cloud-Session gut funktioniert. Er liest und schickt Screenshots gern.
-
 ### Was auch aus dem Rechenzentrum ging
 
 | Zugriff | Status |
