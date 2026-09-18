@@ -6,7 +6,16 @@
 //   node ae-item.js --variants 1005009580843710      # klickt alle SKU-Optionen durch
 //   node ae-item.js --select "IP30,30LEDs-M,5m" 1005009580843710   # eine Kombination
 //   node ae-item.js --qty 10 1005007059651484        # Deal-Grenze vs. Lagerbestand
+//   node ae-item.js --mobile 1005004476867346        # iPhone-Profil, m.aliexpress.com
 //   node ae-item.js --file ids.txt
+//
+// --mobile ist kein Komfort-Schalter, sondern ein Umweg um eine Sperre: am
+// 18.09.2026 abends lieferte das Desktop-Profil auf JEDEM Host nur noch eine
+// leere Huelle (rund 1300 Zeichen Kopf/Fuss, null Preise, keine Umleitung),
+// waehrend dasselbe Angebot mit iPhone-UA und 420x900-Viewport 29 SKU-Knoten
+// und 51 CHF-Angaben zurueckgab. Entscheidend ist das UA/Viewport-Profil, nicht
+// der Host – mit Mobilprofil geht auch de.aliexpress.com. Ein paar Stunden
+// spaeter war allerdings auch dieser Weg auf /punish, siehe HANDOVER-LOKAL.md.
 //
 // Ausgabe: Konsole + $OUTFILE (Default /tmp/ae-items.json)
 //
@@ -23,6 +32,7 @@ const { chromium } = require('playwright');
 const fs = require('fs');
 
 const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36';
+const UA_MOBILE = 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1';
 
 const COOKIES = [
   { name: 'aep_usuc_f', value: 'site=deu&c_tp=CHF&region=CH&b_locale=de_DE', domain: '.aliexpress.com', path: '/' },
@@ -55,7 +65,9 @@ const readPrice = () => {
 };
 
 async function scrape(p, id, opts) {
-  const url = `https://de.aliexpress.com/item/${id}.html`;
+  const url = opts.mobile
+    ? `https://m.aliexpress.com/item/${id}.html`
+    : `https://de.aliexpress.com/item/${id}.html`;
   // Bis zu 3 Versuche. Wichtig: nicht nur bei goto-Fehlern wiederholen, sondern
   // auch wenn die Seite zwar laedt, der Preisblock aber leer bleibt. Genau das
   // passiert in Serienlaeufen und sieht sonst aus wie "Angebot existiert nicht".
@@ -66,7 +78,16 @@ async function scrape(p, id, opts) {
       await p.waitForTimeout((opts.wait || 8000) + (attempt - 1) * 5000);
       landed = p.url();
       if (/_____tmd_____|punish|captcha/i.test(landed)) return { url, error: 'BOT-SCHUTZ', landed };
-      const ok = await p.evaluate(() => !!document.querySelector('[class*="price-default--current"]'));
+      // Die Mobilseite hat andere, ebenfalls gehashte Klassennamen; ein
+      // price-default--current gibt es dort nicht. Als Bereitschaftszeichen
+      // dient deshalb, dass ueberhaupt Inhalt mit CHF-Betraegen da ist – die
+      // leere Huelle der Sperre hat rund 1300 Zeichen und null Preise.
+      const ok = opts.mobile
+        ? await p.evaluate(() => {
+            const t = document.body.innerText || '';
+            return t.length > 3000 && /CHF/.test(t);
+          })
+        : await p.evaluate(() => !!document.querySelector('[class*="price-default--current"]'));
       if (ok) break;
       priceBlockEmpty = true;
     } catch (e) { if (attempt === 3) throw e; }
@@ -138,10 +159,52 @@ async function scrape(p, id, opts) {
   // Ohne durchgestrichenen Preis ist der angezeigte Preis der regulaere.
   rec.priceRegular = base.regular != null ? base.regular : base.shown;
 
+  // Auf der Mobilseite greifen die Desktop-Selektoren nicht. Die Variantenkacheln
+  // (skuTile--*) sind beim Laden noch Platzhalter (Klasse sh--* = Shimmer) und
+  // fuellen sich erst, wenn man die Variantenzeile antippt – dann oeffnet sich ein
+  // Blatt von unten. Deshalb: antippen, dann den ganzen Seitentext mitnehmen.
+  // Der Text ist grob, enthaelt aber Variantennamen, Preise und die Bestandszeile.
+  if (opts.mobile) rec.mobile = await readMobile(p);
+
   if (opts.select) rec.selected = await selectVariants(p, opts.select);
   if (opts.qty) rec.qtyTest = await testQty(p, opts.qty);
   if (opts.variants) rec.variantPrices = await clickVariants(p);
   return rec;
+}
+
+// Mobilseite auslesen. UNGETESTET ueber den Punkt hinaus, dass die Seite laedt
+// und Titel/Preis/Versand im Text stehen – als der Weg gefunden war, ging die
+// harte Sperre zu, bevor das Antippen der Variantenzeile geprueft werden konnte.
+// Wer hier weitermacht: erst /tmp/ae-mobile.png ansehen, dann Selektoren waehlen.
+async function readMobile(p) {
+  const out = {};
+  out.textBefore = (await p.evaluate(() => document.body.innerText)).slice(0, 2500);
+
+  // Die Variantenzeile traegt den Gruppennamen und die gewaehlte Option, etwa
+  // "Farbe : 30PIN". Ueber den Text finden, nicht ueber die gehashte Klasse.
+  const row = await p.evaluateHandle(() => {
+    const cands = [...document.querySelectorAll('[class*="skuRow"], div, span')];
+    return cands.find(e => /^[A-Za-zÄÖÜäöü ]{2,20}\s*:\s*\S/.test((e.innerText || '').trim())
+      && (e.innerText || '').length < 60) || null;
+  });
+  const el = row.asElement();
+  if (el) {
+    await el.scrollIntoViewIfNeeded().catch(() => {});
+    await el.tap().catch(async () => { await el.click().catch(() => {}); });
+    await p.waitForTimeout(3500);
+  }
+  out.rowTapped = !!el;
+
+  // Nach dem Antippen alles mitnehmen: das Blatt listet die Optionen mit Preis.
+  out.textAfter = (await p.evaluate(() => document.body.innerText)).slice(0, 4000);
+  out.tiles = await p.evaluate(() => [...document.querySelectorAll('[class*="skuTile"]')]
+    .map(e => ({
+      label: (e.getAttribute('title') || (e.querySelector('img') || {}).alt || e.innerText || '').trim().slice(0, 60),
+      // sh--* ist der Shimmer-Platzhalter: die Kachel ist noch nicht gefuellt.
+      placeholder: /\bsh--/.test(e.className),
+    })).slice(0, 60));
+  await p.screenshot({ path: '/tmp/ae-mobile.png', fullPage: false }).catch(() => {});
+  return out;
 }
 
 // Setzt die Menge und liest, was die Seite daraufhin sagt. Trennt zwei Dinge,
@@ -287,7 +350,13 @@ async function run(ids, opts) {
   const b = await chromium.launch();
   // Hohes Fenster: bei 1200 px verdeckt die klebende Kopfzeile die mittig
   // gescrollte Variantenoption, der Klick laeuft dann in einen Timeout.
-  const ctx = await b.newContext({ locale: 'de-CH', userAgent: UA, viewport: { width: 1600, height: 1400 }, timezoneId: 'Europe/Zurich' });
+  const ctx = await b.newContext(opts.mobile
+    // isMobile/hasTouch muessen mit: nur die UA zu tauschen genuegt nicht, die
+    // Seite prueft auch Viewport und Touch-Faehigkeit.
+    ? { locale: 'de-CH', timezoneId: 'Europe/Zurich', userAgent: UA_MOBILE,
+        viewport: { width: 420, height: 900 }, isMobile: true, hasTouch: true, deviceScaleFactor: 3 }
+    : { locale: 'de-CH', timezoneId: 'Europe/Zurich', userAgent: UA,
+        viewport: { width: 1600, height: 1400 } });
   await ctx.addCookies(COOKIES);
   // Bilder nur blockieren, wenn nicht geklickt wird: mit blockierten Bildern
   // bleibt die Variantenauswahl bei manchen Angeboten wirkungslos (der Klick
@@ -345,6 +414,14 @@ async function run(ids, opts) {
       if (rec.qtyTest) console.log(`    Mengentest : akzeptiert ${rec.qtyTest.accepted}  gesperrt=${rec.qtyTest.increaseBlocked}` +
                                    `  "${rec.qtyTest.info || ''}"  Preis danach: ${rec.qtyTest.priceAfter}`);
       (rec.variantGroups || []).forEach(v => console.log(`    Variante   : ${v.name} -> ${v.options.slice(0, 12).join(' / ')}`));
+      if (rec.mobile) {
+        const t = rec.mobile.tiles || [];
+        console.log(`    MOBIL      : Zeile angetippt=${rec.mobile.rowTapped}  Kacheln ${t.length}` +
+                    ` (davon Platzhalter ${t.filter(x => x.placeholder).length})  Bild: /tmp/ae-mobile.png`);
+        t.filter(x => x.label).slice(0, 20).forEach(x => console.log(`        ${x.label}`));
+        console.log('    --- Seitentext nach dem Antippen ---');
+        console.log(rec.mobile.textAfter.replace(/\n{2,}/g, '\n').split('\n').map(l => '      ' + l).join('\n'));
+      }
       if (rec.selected) {
         console.log(`    >>> GEWAEHLT: ${rec.selected.picked.map(x => `${x.want}=${x.hit}${x.how ? '(' + x.how + ')' : ''}${x.error ? ' [' + x.error + ']' : ''}`).join('  |  ')}`);
         const s = rec.selected.state;
@@ -378,12 +455,13 @@ const pi = args.indexOf('--pause');
 const opts = {
   pause: pi >= 0 ? parseInt(args[pi + 1], 10) * 1000 : 0,
   variants: args.includes('--variants'),
+  mobile: args.includes('--mobile'),
   qty: qi >= 0 ? parseInt(args[qi + 1], 10) : 0,
   // --select "IP30,30LEDs-M,5m" -> gezielte Variantenkombination
   select: si >= 0 ? args[si + 1].split(',').map(s => s.trim()).filter(Boolean) : null,
 };
 // Von hinten splicen, sonst verschieben sich die Indizes gegenseitig.
 [qi, si, pi].filter(i => i >= 0).sort((a, b) => b - a).forEach(i => args.splice(i, 2));
-args = args.filter(a => a !== '--variants');
+args = args.filter(a => a !== '--variants' && a !== '--mobile');
 if (args[0] === '--file') args = fs.readFileSync(args[1], 'utf8').split(/\s+/).filter(Boolean);
 run(args, opts);

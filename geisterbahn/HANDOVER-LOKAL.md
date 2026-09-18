@@ -53,6 +53,7 @@ Cloud-Session – `npx playwright install chromium` genügt.
 | Datei | Zweck |
 |---|---|
 | `tools/ae-item.js` | **Produktseite** auslesen: Regulärpreis, Versand, Lieferfenster, Lagerbestand, Deal-Grenze, Staffelpreise, Varianten. `--variants` klickt alle Optionen durch, `--select "IP30,30LEDs-M,5m"` wählt eine Kombination, `--qty 10` trennt Deal-Grenze von Lagerbestand, `--pause N` setzt Sekunden zwischen Positionen. |
+| `tools/ae-item.js --mobile` | iPhone-Profil + `m.aliexpress.com`. **Umweg um die «leere Hülle»**, siehe unten. Schreibt einen Screenshot nach `/tmp/ae-mobile.png`. |
 | `tools/ae-store.js` | Suche **innerhalb eines Shops**, mit Relevanzfilter. Der Filter ist nötig, weil eine Shop-Suche ohne Treffer nicht leer zurückkommt, sondern **das ganze Sortiment** ausspielt – ohne Filter sieht jede Position nach «vorhanden» aus. ⚠️ **Die Trefferzahl ist trotzdem keine Antwort – die Titel lesen.** Der Lauf für TZT meldete 22/28; beim Durchlesen waren «COB-LED» ein Flutlicht-Chip und eine W5W-Autolampe, «IRF520» nackte MOSFETs statt des Treibermoduls, «SG90/MG996R» Metallgetriebe-Sets statt Servos und der billige «LM2596» ein MP1584. Ein früherer Lauf meldete 6/7, echt waren 2. Relevanz nach Suchwort ≠ richtiges Bauteil. |
 | `tools/gruppe-b.json` | Die 28 B-Positionen mit Suchbegriff und Relevanz-Schlüsselwörtern, Eingabe für `ae-store.js`. |
 
@@ -113,6 +114,50 @@ einen leeren Datensatz, über ein Wegwerf-Skript **ohne** `p.route` sofort die
 **ungerouteten** Ladeversuch, nur zur Diagnose, und meldet dann `BOT-SCHUTZ`. Wenn du am
 Werkzeug schraubst: **Blocker aus, sonst siehst du die Sperre nicht.**
 
+### Vierte Sperre: die stumme leere Hülle — und wie man sie umgeht
+
+Am Abend des 18.09.2026 kam eine **vierte** Variante dazu, die zu den drei oben nicht
+passt: HTTP 200, **keine** Umleitung, `p.url()` unauffällig, aber der Body hat nur
+**rund 1300 Zeichen** Kopf- und Fusszeilen-Beiwerk und **null Preise**. Kein Captcha,
+keine Fehlermeldung – die Seite wird einfach ohne Inhalt ausgeliefert. Getestet auf
+`de.`, `www.`, mit `/item/`, `/i/` und `?gatewayAdapt=glo2deu`: überall dasselbe.
+
+**Der Ausweg war das User-Agent-Profil, nicht der Host.** Mit iPhone-UA und einem
+Viewport von 420 × 900 (plus `isMobile`/`hasTouch`) lieferte dasselbe Angebot
+**7995 Zeichen, 51 CHF-Beträge und 29 SKU-Knoten** – und zwar sowohl auf
+`m.aliexpress.com` als auch auf `de.aliexpress.com`. `es.aliexpress.com` lief parallel
+auf `punish`, `m.aliexpress.com/p/item/` auf 404. Dafür gibt es jetzt
+**`ae-item.js --mobile`**.
+
+⚠️ **Die Mobilvarianten sind lazy-gerendert.** Die Kacheln heissen `skuTile--*` und
+tragen beim Laden zusätzlich `sh--*` (Shimmer = Platzhalter); `title`, `alt` und
+`innerText` sind dann leer. Scrollen füllt sie **nicht** – im Versuch verschwanden sie
+danach ganz. Sie hängen an einer Interaktion: die Variantenzeile (`skuRow--*`, Text
+etwa «Farbe : 30PIN») antippen, dann öffnet sich ein Blatt von unten. `readMobile()`
+in `ae-item.js` tippt genau das an und nimmt danach den Seitentext mit – **dieser Teil
+ist ungetestet**, weil vorher die harte Sperre zuging. Erster Schritt für die nächste
+Session: `--mobile` laufen lassen und **`/tmp/ae-mobile.png` ansehen**, bevor du
+Selektoren schreibst.
+
+### Stand am Ende des 18.09.2026: Produktseiten zu, Shopseiten offen
+
+| Zugang | Status |
+|---|---|
+| Trefferlisten `/w/wholesale-*.html` | ✅ funktioniert weiter, inkl. durchgestrichener Regulärpreise |
+| Shopseiten `/store/<id>` | ✅ funktioniert weiter |
+| Produktseiten, **alle** Hosts | ❌ `punish` – geprüft: `m.`, `de.`, `www.`, `nl.`, `fr.`, `it.aliexpress.com`, `www.aliexpress.us`, jeweils frischer Kontext mit Mobilprofil |
+| Produktseiten im App-Browser (echter Browser, keine Automatisierung) | ❌ `punish` – also **nicht** der Automatisierungs-Fingerprint |
+| Reader-Proxy `r.jina.ai` (fremde IP) | ❌ «Captcha Interception» – Rechenzentrums-IPs sind global gesperrt, das deckt sich mit der Cloud-Session |
+| `aeglodetailweb/api/seo/seodata` | ❌ leitet inzwischen auf die Startseite um; früher sitzungsfrei nutzbar, hatte aber nie Preise |
+
+**Was daraus folgt:** Variantenpreise und Lagerbestände gibt es **nur** von einer
+Wohnanschluss-IP, und die verträgt etwa 25 Produktseiten, bevor sie für Stunden
+gesperrt wird. Plane Abrufe deshalb wie ein knappes Budget: Liste der IDs vorher
+festlegen, `--pause 30`, und nicht explorativ klicken. Wer schneller eine Einzelinfo
+braucht, ist mit «Maxim schaut im Warenkorb nach» objektiv besser dran – er ist
+eingeloggt, sieht dort Bestand und echten Preis ohne Neukunden-Verzerrung, und es
+kostet ihn 20 Sekunden.
+
 **Und: ein direkter API-Weg existiert nicht.** Geprüft, nicht vermutet: beim
 Seitenaufbau trägt kein XHR die SKU-Daten, `window.runParams` ist leer, im HTML steht
 kein Preis-/SKU-Payload, und `aeglodetailweb/api/seo/seodata` funktioniert **ohne jede
@@ -158,7 +203,7 @@ Zustellung 27.–30. September** – die erste bestätigte Versandangabe überha
 >
 > | # | Aufgabe | Status |
 > |---|---|---|
-> | 4.1 | Board + Breakout beim selben Verkäufer | ✅ **Simple Robot Store**, CHF 57.60 für 10+10 |
+> | 4.1 | Board + Breakout beim selben Verkäufer | ⚠️ **überarbeitet.** Simple Robot Store bleibt, aber das Breakout-Einzelangebot hat **nur 1 Stück** (Maxims Warenkorb-Screenshot). Jetzt: Board **und** Breakout als zwei Varianten **desselben** Angebots `1005004476867346` (`TYPE-C-CP2102-38PIN` 3.48 + `Adapter 38P` 2.42 = CHF 59.00). **Bestand von `Adapter 38P` ungeprüft** – Produktseiten sind gesperrt. Rückfall: Ziqqucu 2.83. |
 > | 4.2 | Regulärpreise nachtragen | ✅ alle 7 |
 > | 4.3 | Versandkosten | ✅ Gratis ist die Regel, 2 Ausnahmen, zusammen CHF 12 |
 > | 4.4 | Variantenpreise | ✅ alle 5, plus Elko und UV |

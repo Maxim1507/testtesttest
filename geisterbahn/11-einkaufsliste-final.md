@@ -155,19 +155,44 @@ Mehr als das gibt TZT nicht her.
 
 ---
 
-## 🇨🇳 Gruppe A · ESP32 — ≈ CHF 58
+## 🇨🇳 Gruppe A · ESP32 — ≈ CHF 60
 
-**Beides bei Simple Robot Store — ein Verkäufer, ein Paket, Gratisversand.**
+> ⚠️ **Geändert am 18.09.2026 abends, nachdem dein Warenkorb-Screenshot da war.**
+> Das Breakout-Einzelangebot [1005004478557343](https://de.aliexpress.com/item/1005004478557343.html)
+> zeigt im Warenkorb **«Nur noch 1 übrig»** und lässt sich deshalb nur 1× bestellen.
+> Das ist **echter Lagerbestand**, nicht die Neukunden-Grenze — für 10 Stück fällt es
+> damit aus. Die alte Empfehlung (10 + 10 für CHF 57.60) ist hinfällig.
+
+**Beides bei Simple Robot Store, jetzt aber aus *einem* Angebot — ein Verkäufer, ein
+Paket, Gratisversand, und die Passform ist garantiert, weil es dieselbe Artikelnummer
+ist.**
 
 | Menge | Artikel | CHF/Stk | Total | Angebot |
 |---|---|---|---|---|
-| 10 | ESP32 DevKit ⚠️ Variante **`TYPE-C-CP2102-38PIN`** | **3.56 bestätigt** · Versand gratis, Sep 25–30 · 4.7★ · 10 000+ | 35.60 | [ESP32-DevKitC-32 ESP-WROOM](https://de.aliexpress.com/item/1005004476867346.html) – Simple Robot Store |
-| 10 | Schraubklemmen-Breakout, **38-Pin Schmalversion** | **2.20 bestätigt** · Versand gratis, Sep 25–30 · 4.8★ · 900+ | 22.00 | [Breakout GPIO 1 zu 2, 38-PIN](https://de.aliexpress.com/item/1005004478557343.html) – Simple Robot Store |
+| 10 | ESP32 DevKit ⚠️ Variante **`TYPE-C-CP2102-38PIN`** | **3.48 bestätigt** (Warenkorb) · Versand gratis, Sep 25–30 · 4.7★ · 10 000+ | 34.80 | [ESP32-DevKitC-32 ESP-WROOM](https://de.aliexpress.com/item/1005004476867346.html) – Simple Robot Store |
+| 10 | Schraubklemmen-Breakout ⚠️ Variante **`Adapter 38P`** aus demselben Angebot | 2.42 bestätigt · ⚠️ **Bestand ungeprüft** | 24.20 | dasselbe Angebot, andere Variante |
+
+Der Warenkorb hat **Menge 10 beim Board anstandslos akzeptiert** — beim Board gibt es
+also kein Bestandsproblem. Die Variante `Adapter 38P` hat einen **eigenen
+Lagerbestand**, getrennt vom Einzelangebot; ob dort 10 Stück liegen, konnte ich nicht
+prüfen (siehe «Erreichbarkeit»). **Leg sie in den Warenkorb und setz die Menge auf 10
+— steht danach «Nur noch N übrig», nimm die Alternative unten.**
+
+> 💡 **Preisstand:** Im Warenkorb stand beim Board **CHF 3.27 statt 3.48** —
+> Herbst-Sale, **läuft am 20.09.2026 um 23:59 (GMT+2) ab.** Wenn du vorher bestellst,
+> sind das CHF 2.10 weniger. Die Tabelle rechnet bewusst mit dem Regulärpreis 3.48.
 
 Bildkontrolle 18.09.2026: der Breakout ist grün, hat **Schraubklemmen an beiden
-Längsseiten** und den Aufdruck «TERMINAL ADAPTER» — das ist der richtige Typ. Der
-Verkäufer führt denselben Adapter zusätzlich als Variante `Adapter 38P` im
-Board-Angebot (2.42), also teurer als das Einzelangebot — nimm das Einzelangebot.
+Längsseiten** und den Aufdruck «TERMINAL ADAPTER» — das ist der richtige Typ.
+
+**Rückfall, falls `Adapter 38P` auch knapp ist:**
+
+| Menge | Artikel | CHF/Stk | Total | Angebot |
+|---|---|---|---|---|
+| 10 | Schraubklemmen-Breakout 38 Pin | **2.83 bestätigt** · Versand gratis · 4.8★ · 900+ | 28.30 | [ESP-32S 38pin Schraube-Board](https://de.aliexpress.com/item/1005006026098254.html) – Ziqqucu |
+
+Kostet CHF 4.10 mehr als `Adapter 38P`, ist ein Paket mehr, und die Passform auf das
+Board von Simple Robot Store ist **nicht garantiert** — deshalb erst der Versuch oben.
 
 **Die billigere Alternative, die du nicht nehmen solltest:**
 
@@ -176,10 +201,10 @@ Board-Angebot (2.42), also teurer als das Einzelangebot — nimm das Einzelangeb
 | 10 | ESP32 DevKit 38 Pin | 1.91 **bestätigt** · Versand gratis · 4.8★ · 1000+ | 19.10 | [ESP-WROOM-32 DevKitC 38PINS](https://de.aliexpress.com/item/1005007059778300.html) – Realpoy |
 | 10 | Schraubklemmen-Breakout 38 Pin | 2.83 **bestätigt** · Versand gratis · 4.8★ · 900+ | 28.30 | [ESP-32S 38pin Schraube-Board](https://de.aliexpress.com/item/1005006026098254.html) – Ziqqucu |
 
-Das wären **CHF 47.40 statt 57.60**, also CHF 10 günstiger. Dafür zwei Verkäufer,
+Das wären **CHF 47.40 statt 59.00**, also CHF 11.60 günstiger. Dafür zwei Verkäufer,
 zwei Pakete — und, das ist der eigentliche Punkt, **niemand garantiert, dass
 Realpoys Board auf Ziqqucus Breakout passt.** Genau diese Unsicherheit wolltest du
-weghaben. CHF 10 für Passgarantie und ein Paket weniger ist der bessere Tausch.
+weghaben. Der Aufpreis für Passgarantie und ein Paket weniger ist der bessere Tausch.
 
 > **Der Schraubklemmen-Breakout heisst auf AliExpress «GPIO 1 in 2» oder «1 zu 2»** –
 > nicht «screw terminal». Deshalb war er über neun Suchen hinweg unauffindbar.
@@ -457,6 +482,7 @@ Alle Variantenpreise der Hauptpositionen sind geprüft. Es bleiben zwei Kleinigk
 |---|---|---|
 | UV-Alternative `33032788373` | Nicht auslesbar (AliExpress-Sperre). Nur relevant, wenn du beim UV-Strip noch sparen willst. | keine, Hauptangebot steht |
 | 3 TZT-Umbuchungen | Elko, Dupont-Set und Relaismodul bei TZT: Bauteil passt laut Titel, **Variantenpreise aber nicht bestätigt** (Sperre). Tabelle unter «Ergebnis der Bündelungs-Prüfung». | bis ≈ CHF 3 billiger und **ein Paket weniger** – oder gar nichts, falls die Varianten teurer sind |
+| **Bestand der Variante `Adapter 38P`** | Ob 10 Stück lieferbar sind. **Das siehst du in 20 Sekunden selbst im Warenkorb**, ich nicht – Produktseiten sind gesperrt. | entscheidet Gruppe A: `Adapter 38P` (24.20) oder Ziqqucu (28.30) |
 
 ⚠️ **Ein echter Restpunkt bleibt die Platinenbreite.** Board und Breakout kommen beim
 empfohlenen Verkäufer aus demselben Shop, und der Breakout heisst ausdrücklich
@@ -479,6 +505,9 @@ Wenn nein → SwitchBot Bot, CHF 20.90, per Bluetooth direkt vom Pi.
    Angebots ist **30PIN** und passt nicht auf das Breakout – das ist die
    wahrscheinlichste Fehlbestellung der ganzen Liste. Board und Breakout beim
    selben Verkäufer bestellen.
+   ⚠️ **Und den Breakout als Variante `Adapter 38P` aus demselben Angebot**, nicht als
+   Einzelangebot – das Einzelangebot hat nur noch 1 Stück. **Menge auf 10 setzen und
+   hinsehen:** kommt «Nur noch N übrig», dann der Rückfall Ziqqucu (2.83).
 2. **UV-Strip: Variante `5M 12V 5050 60leds`.** Nicht die 5-V-Variante, nicht 1 m.
 3. **WS2812B: Variante «Black PCB IP30 / 30LEDs-M / 5m».** Wirklich WS2812B, nicht
    WS2811. Weisse Platine ist in 5 m ausverkauft.
@@ -512,7 +541,7 @@ Wenn nein → SwitchBot Bot, CHF 20.90, per Bluetooth direkt vom Pi.
 | Domain | Status |
 |---|---|
 | `de.aliexpress.com` – **Trefferlisten** | ✅ funktioniert, Preise in CHF, Lieferland CH |
-| `de.aliexpress.com` – **Produktseiten** | ⚠️ **von Maxims Anschluss aus lesbar**, inkl. Varianten und Versand – aber nur begrenzt. Nach etwa 25 Abrufen kommt die Drosselung, dann die harte Sperre (`/_____tmd_____/punish`). Aus Rechenzentren ab dem ersten Aufruf gesperrt. |
+| `de.aliexpress.com` – **Produktseiten** | ❌ **seit dem Abend des 18.09.2026 gesperrt**, auch von deinem Anschluss. Bis dahin lesbar, aber nur etwa 25 Abrufe; danach erst Drosselung, dann die harte Sperre (`/_____tmd_____/punish`). Details und was alles vergeblich probiert wurde: `HANDOVER-LOKAL.md`, Abschnitt 2. |
 | `de.aliexpress.com` – **Verkäuferseiten** `/store/<id>` | ✅ **funktioniert samt Produktliste**, inkl. Suche im Shop. Kein Bot-Schutz beobachtet. Das ist der robusteste Zugang. |
 | `ae01.alicdn.com` | ✅ Bilder-CDN |
 | `www.bastelgarage.ch` | ✅ vollständig, servergerendert |
