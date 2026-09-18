@@ -65,17 +65,56 @@ Warenwerts, und es gibt viele Händler, die das komplett führen.
 3. Nutze die **Suche innerhalb des Shops** für die übrigen Positionen der Gruppe.
 4. Was der Shop nicht führt, nimmst du aus der Liste unten beim verlinkten Anbieter.
 
-> **Stand 18.09.2026:** Die Shop-Suche ist inzwischen lokal automatisiert
-> (`tools/ae-store.js`). Ergebnis bisher: **TZT Official Store deckt mindestens
-> 15 der 28 B-Positionen** und ist damit der beste Bündel-Kandidat; Realpoy deckt
-> nur 9 von 20. Sicher **nicht** bei TZT: Reed MC-38, LDR-Modul, 74AHCT125, SG90,
-> DFPlayer, Arcade-Taster – die kommen aus den unten verlinkten Einzelangeboten.
-> Rechne also mit **B = TZT-Paket + 1–2 Restpaketen**, nicht mit einem einzigen.
+### Ergebnis der Bündelungs-Prüfung (18.09.2026)
 
-> **Der Kompromiss:** Ein Bündel-Händler ist selten bei jeder einzelnen Position
-> der billigste. Rechne mit CHF 10–20 Aufpreis auf die Ware – und spare dafür
-> 5 Versandkosten, 5 Sendungsverfolgungen und 5 Gelegenheiten, dass ein Paket
-> hängen bleibt. Bei diesem Zeitplan ist das ein guter Tausch.
+**TZT 123 Official Store ist der Anker – aber B wird nicht ein Paket.**
+
+Drei Positionen der Liste kommen schon von TZT: **SW-420**, **PCF8574** und die
+**E18-D80NK**. Und TZT ist der einzige Händler in Gruppe B, der überhaupt Versand
+verlangt: **CHF 5.93**, bestätigt auf zwei Produktseiten. AliExpress rechnet Versand
+**pro Händler und Sendung** ab, nicht pro Artikel – die 5.93 sind also schon bezahlt,
+und **jede weitere TZT-Position fährt versandkostenfrei mit.** Das dreht die
+Bündelungs-Logik: Bündeln spart hier kein Geld (alle anderen liefern gratis), sondern
+**Pakete**. Der Hebel ist, möglichst viel in die eine TZT-Sendung zu legen, die du
+ohnehin hast.
+
+**Sicher nicht bei TZT** – null Treffer im Sortiment: **74AHCT125 · DFPlayer Mini ·
+Stroboskop 12 V · Arcade-Taster**. Dazu aus der früheren Prüfung: Reed MC-38, LDR-Modul.
+Damit bleiben mindestens **2 Restpakete**, egal wie gut der Rest zusammenpasst.
+
+**Scheintreffer, die der Stichwortfilter gemeldet hat und die keine sind** – ich habe
+die Titel einzeln gelesen: der «COB-LED»-Treffer ist ein 10–100-W-Flutlicht-COB-Chip
+und eine W5W-Autolampe, nicht das 12-V-Modul · «IRF520» sind **nackte MOSFETs**, nicht
+das Treibermodul · «SG90/MG996R» sind **Metallgetriebe-Sets**, keine Servos · der
+billige «LM2596» ist ein MP1584/MINI360. Diese vier bleiben, wo sie sind.
+
+> ⚠️ **Die alte Zahl «15 von 28» war zu optimistisch** und stammte aus demselben
+> Stichwortfilter. Relevanz nach Suchwort ist nicht dasselbe wie das richtige Bauteil.
+
+**Echte TZT-Kandidaten – Preise noch NICHT bestätigt.** Diese Angebote sind vom Titel
+her das richtige Bauteil, aber die Preise stammen aus der Shop-Trefferliste, gelten für
+die **billigste Variante** und sind auf der Produktseite nicht gegengeprüft (die
+AliExpress-Sperre hat mich am Abend des 18.09. gestoppt). **Vor dem Umbuchen im
+Warenkorb selbst prüfen:**
+
+| Position | TZT-Angebot | TZT *geschätzt* | aktuell in der Liste |
+|---|---|---|---|
+| Elko 1000 µF / 16 V | [1005005944252448](https://de.aliexpress.com/item/1005005944252448.html) «10/50 Stk 1000 µF 16 V» | *≈ 0.92* | 2.33 **bestätigt** (IBUW) |
+| Dupont-Kabel-Set | [4000812552635](https://de.aliexpress.com/item/4000812552635.html) M-M + F-M + F-F | *≈ 0.98* | 2.92 **bestätigt** |
+| Relaismodul 5 V | [32787386713](https://de.aliexpress.com/item/32787386713.html) 1/2/4/6/8-Kanal Optokoppler | *≈ 1.04* ⚠️ | 6.26 / 2.30 **bestätigt** (YouKeyi) |
+| Lautsprecher 3 W | [1005010728678265](https://de.aliexpress.com/item/1005010728678265.html) 3525/2535 | *≈ 1.04* | 1.12 **bestätigt** |
+| Widerstandsset 600 | [1005008786731033](https://de.aliexpress.com/item/1005008786731033.html) | **2.95 bestätigt** | 2.97 **bestätigt** |
+| PAM8403 | [1005008157267328](https://de.aliexpress.com/item/1005008157267328.html) | *≈ 1.01* | 0.90 **bestätigt** → **teurer** |
+
+⚠️ **Beim Relais ist die 1.04 mit Sicherheit die 1-Kanal-Variante** – genau die Falle,
+die beim YouKeyi-Angebot schon zugeschlagen hat (Listenpreis 1.56 galt für «1 Channel
+24V», echt sind 6.26 für 8-Kanal). Erwarte bei TZT keine Ersparnis, bis du die
+Variantenpreise gesehen hast.
+
+**Was das praktisch heisst:** Das Widerstandsset zu TZT umbuchen kostet nichts und
+spart ein Paket (2.95 statt 2.97, Versand schon bezahlt). Elko und Dupont sehen nach
+je gut CHF 1.40 bzw. 1.90 Ersparnis aus – **wenn** sich die Variantenpreise halten.
+Mehr als das gibt TZT nicht her.
 
 ---
 
@@ -322,8 +361,12 @@ die günstigen Kombinationen waren **30-Pin-Boards**, und die passen nicht.
 
 Aufstellung: A 57.60 · B 115.10 · C 64.42 · D 17.73 · Arcade 9.00.
 Innerhalb B: B1 22.23 · B2 20.37 · B3 16.50 · B4 21.87 · B5 24.44 · B6 9.69.
-Versand fällt nur bei **zwei** Positionen an: E18-D80NK 5.94 und JGY-370 5.95.
-Alles andere ist gratis.
+Versand fällt nur bei **zwei** Händlern an: **TZT** 5.93 (bei der E18-D80NK
+eingerechnet) und der **JGY-370-Händler** 5.95. Alles andere ist gratis.
+
+> **Die TZT-5.93 gelten pro Sendung, nicht pro Artikel.** SW-420 und PCF8574 kommen
+> ebenfalls von TZT und fahren darin mit – deshalb steht bei ihnen kein Versand.
+> Legst du weitere TZT-Positionen dazu, ändert sich der Versand **nicht**.
 
 ---
 
@@ -369,7 +412,8 @@ Alles andere ist gratis.
 ✅ **Ermittelt am 18.09.2026.** Von der lokalen Session aus sind die Produktseiten
 lesbar; die Sperre hing an der Rechenzentrums-IP der Cloud-Session, nicht am
 Navigationsweg. Ergebnis: **Gratisversand ist bei diesen Händlern die Regel.** Nur
-drei Positionen kosten Versand, alle drei sind oben mit ⚠️ markiert.
+zwei Händler verlangen Versand – TZT und der JGY-370-Händler –, beide sind oben
+mit ⚠️ markiert.
 
 Was nach wie vor gilt: die Preise sind pro Position beim jeweiligen Händler geprüft.
 Bündelst du um, **ändert sich der Versand mit** – im Warenkorb gegenprüfen.
@@ -381,7 +425,7 @@ Alle Variantenpreise der Hauptpositionen sind geprüft. Es bleiben zwei Kleinigk
 | Position | Was fehlt | Auswirkung |
 |---|---|---|
 | UV-Alternative `33032788373` | Nicht auslesbar (AliExpress-Sperre). Nur relevant, wenn du beim UV-Strip noch sparen willst. | keine, Hauptangebot steht |
-| 7 TZT-Positionen | SW-420, COB-LED, Stroboskop, Relais, 1N4007, Elko, Widerstandsset – ob TZT sie führt, ist wegen Netzwerkfehlern offen. | betrifft nur die **Zahl der Pakete**, nicht die Preise |
+| 3 TZT-Umbuchungen | Elko, Dupont-Set und Relaismodul bei TZT: Bauteil passt laut Titel, **Variantenpreise aber nicht bestätigt** (Sperre). Tabelle unter «Ergebnis der Bündelungs-Prüfung». | bis ≈ CHF 3 billiger und **ein Paket weniger** – oder gar nichts, falls die Varianten teurer sind |
 
 ⚠️ **Ein echter Restpunkt bleibt die Platinenbreite.** Board und Breakout kommen beim
 empfohlenen Verkäufer aus demselben Shop, und der Breakout heisst ausdrücklich

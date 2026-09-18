@@ -53,7 +53,7 @@ Cloud-Session – `npx playwright install chromium` genügt.
 | Datei | Zweck |
 |---|---|
 | `tools/ae-item.js` | **Produktseite** auslesen: Regulärpreis, Versand, Lieferfenster, Lagerbestand, Deal-Grenze, Staffelpreise, Varianten. `--variants` klickt alle Optionen durch, `--select "IP30,30LEDs-M,5m"` wählt eine Kombination, `--qty 10` trennt Deal-Grenze von Lagerbestand, `--pause N` setzt Sekunden zwischen Positionen. |
-| `tools/ae-store.js` | Suche **innerhalb eines Shops**, mit Relevanzfilter. Der Filter ist nötig, weil eine Shop-Suche ohne Treffer nicht leer zurückkommt, sondern **das ganze Sortiment** ausspielt – ohne Filter sieht jede Position nach «vorhanden» aus. |
+| `tools/ae-store.js` | Suche **innerhalb eines Shops**, mit Relevanzfilter. Der Filter ist nötig, weil eine Shop-Suche ohne Treffer nicht leer zurückkommt, sondern **das ganze Sortiment** ausspielt – ohne Filter sieht jede Position nach «vorhanden» aus. ⚠️ **Die Trefferzahl ist trotzdem keine Antwort – die Titel lesen.** Der Lauf für TZT meldete 22/28; beim Durchlesen waren «COB-LED» ein Flutlicht-Chip und eine W5W-Autolampe, «IRF520» nackte MOSFETs statt des Treibermoduls, «SG90/MG996R» Metallgetriebe-Sets statt Servos und der billige «LM2596» ein MP1584. Ein früherer Lauf meldete 6/7, echt waren 2. Relevanz nach Suchwort ≠ richtiges Bauteil. |
 | `tools/gruppe-b.json` | Die 28 B-Positionen mit Suchbegriff und Relevanz-Schlüsselwörtern, Eingabe für `ae-store.js`. |
 
 `node_modules` liegt absichtlich **ausserhalb** des Repos, unter
@@ -97,11 +97,21 @@ nichts miteinander zu tun:
 **So unterscheidest du sie:** `p.url()` nach dem `goto` ansehen. Enthält sie `punish`,
 ist es die harte Sperre – dann hilft nur warten oder eine andere Leitung, nicht `--pause`.
 
-⚠️ **Fallstrick im eigenen Werkzeug, inzwischen behoben:** Die Route-Regel in
+⚠️ **Fallstrick im eigenen Werkzeug, in zwei Runden behoben:** Die Route-Regel in
 `ae-item.js` brach alle `_____tmd_____`-Requests ab, **auch die Hauptnavigation**. Damit
 blieb `p.url()` die Originaladresse, die BOT-SCHUTZ-Erkennung griff nicht, und die harte
 Sperre kam als leerer Datensatz zurück – ununterscheidbar von Drosselung. Die Regel gilt
 jetzt nur noch für Sub-Ressourcen (`isNavigationRequest()`-Ausnahme).
+
+**Das reichte aber nicht**, und das ist die wichtigere Hälfte: die Umleitung wird von
+einem Skript ausgelöst, das der Blocker **mitabschiesst**. Mit aktivem Blocker bleibt die
+Seite deshalb einfach auf der Originaladresse stehen und liefert einen leeren Preisblock
+– `p.url()` enthält **kein** `punish`, und der Diskriminator aus dem Abschnitt oben geht
+ins Leere. Bewiesen am 18.09.2026 abends: dasselbe Angebot lieferte über `ae-item.js`
+einen leeren Datensatz, über ein Wegwerf-Skript **ohne** `p.route` sofort die
+`punish`-Adresse. `ae-item.js` macht jetzt nach drei leeren Versuchen einen letzten,
+**ungerouteten** Ladeversuch, nur zur Diagnose, und meldet dann `BOT-SCHUTZ`. Wenn du am
+Werkzeug schraubst: **Blocker aus, sonst siehst du die Sperre nicht.**
 
 **Und: ein direkter API-Weg existiert nicht.** Geprüft, nicht vermutet: beim
 Seitenaufbau trägt kein XHR die SKU-Daten, `window.runParams` ist leer, im HTML steht
@@ -152,7 +162,7 @@ Zustellung 27.–30. September** – die erste bestätigte Versandangabe überha
 > | 4.2 | Regulärpreise nachtragen | ✅ alle 7 |
 > | 4.3 | Versandkosten | ✅ Gratis ist die Regel, 2 Ausnahmen, zusammen CHF 12 |
 > | 4.4 | Variantenpreise | ✅ alle 5, plus Elko und UV |
-> | 4.5 | Gruppe B bündeln | 🟡 TZT deckt ≥ 15/28; 7 Positionen ungeprüft |
+> | 4.5 | Gruppe B bündeln | ✅ **B wird nicht ein Paket.** TZT ist der Anker (3 Positionen liegen schon dort, Versand 5.93 pro Sendung ist bezahlt), aber 74AHCT125, DFPlayer, Stroboskop und Arcade-Taster führt TZT nicht → mind. 2 Restpakete. 3 mögliche Umbuchungen, Preise unbestätigt. |
 > | 4.6 | Datei, Commit, Push | ✅ |
 >
 > **Neues Total: CHF 264 Ware + 12 Versand + 40 Baumarkt ≈ 316.** Der Anstieg

@@ -59,7 +59,7 @@ async function scrape(p, id, opts) {
   // Bis zu 3 Versuche. Wichtig: nicht nur bei goto-Fehlern wiederholen, sondern
   // auch wenn die Seite zwar laedt, der Preisblock aber leer bleibt. Genau das
   // passiert in Serienlaeufen und sieht sonst aus wie "Angebot existiert nicht".
-  let landed;
+  let landed, priceBlockEmpty = false;
   for (let attempt = 1; attempt <= 3; attempt++) {
     try {
       await p.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
@@ -68,8 +68,25 @@ async function scrape(p, id, opts) {
       if (/_____tmd_____|punish|captcha/i.test(landed)) return { url, error: 'BOT-SCHUTZ', landed };
       const ok = await p.evaluate(() => !!document.querySelector('[class*="price-default--current"]'));
       if (ok) break;
+      priceBlockEmpty = true;
     } catch (e) { if (attempt === 3) throw e; }
     if (attempt < 3) await p.waitForTimeout(4000 * attempt);
+  }
+
+  // Dreimal geladen, nie ein Preisblock: entweder Drosselung oder harte IP-Sperre.
+  // Die unterscheiden sich nur an der Landeadresse – und die sieht man nur, wenn der
+  // Route-Blocker aus ist, weil er das umleitende Skript mitblockt. Also ein letzter,
+  // ungerouteter Versuch, nur zur Diagnose. Ohne den meldet das Werkzeug bei einer
+  // Sperre stur "leerer Datensatz" und man sucht den Fehler bei sich selbst.
+  if (priceBlockEmpty) {
+    const raw = await p.context().newPage();
+    try {
+      await raw.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
+      await raw.waitForTimeout(9000);
+      const rl = raw.url();
+      if (/_____tmd_____|punish|captcha/i.test(rl)) return { url, error: 'BOT-SCHUTZ', landed: rl };
+    } catch { /* Diagnose darf den Lauf nicht abbrechen */ }
+    finally { await raw.close(); }
   }
 
   const base = await p.evaluate((readPriceSrc) => {
@@ -290,6 +307,12 @@ async function run(ids, opts) {
       // sichtbar bleiben. Bricht man sie ab, bleibt p.url() die Originaladresse,
       // die BOT-SCHUTZ-Erkennung greift nicht und der Datensatz kommt einfach leer
       // zurueck – das sah eine ganze Session lang nach Drosselung aus.
+      //
+      // Reicht aber NICHT: die Umleitung wird von einem Skript ausgeloest, das hier
+      // mit abgebrochen wird. Mit aktivem Blocker bleibt die Seite also einfach auf
+      // der Originaladresse stehen und liefert einen leeren Preisblock – wieder
+      // ununterscheidbar von Drosselung. Deshalb faellt fetchOne() am Ende auf
+      // einen ungerouteten Versuch zurueck, siehe dort.
       const isNav = r.request().isNavigationRequest() && r.request().frame() === p.mainFrame();
       if (!isNav && /relationrecommend|_____tmd_____|baxia/i.test(r.request().url())) return r.abort();
       return block.includes(r.request().resourceType()) ? r.abort() : r.continue();
