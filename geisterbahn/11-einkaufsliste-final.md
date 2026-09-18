@@ -1,19 +1,63 @@
 # 11 – Einkaufsliste FINAL
 
 **Stand 18.09.2026.** Ersetzt `09-einkaufsliste.md`.
-**Preise erstmals direkt bei AliExpress abgerufen** (Suchergebnisseiten, Währung CHF,
+**Preise direkt bei AliExpress abgerufen** (Suchergebnisseiten, Währung CHF,
 Lieferland Schweiz, sortiert nach Bestellungen).
 
 | | CHF |
 |---|---|
-| AliExpress (9 Pakete, Ware, inkl. Breakouts) | **≈ 213** |
+| AliExpress (Ware, inkl. Breakouts) | **≈ 213** |
 | Versandkosten AliExpress | nicht auslesbar, ≈ 0–30 |
 | Baumarkt | ≈ 40 |
 | Netzteile, SD-Karten | **0** – vorhanden |
 | **Total** | **≈ 253–283** |
 
-> **Das ist rund CHF 100 weniger als die bisherige Schätzung von CHF 379.**
+> **Rund CHF 100 weniger als die bisherige Schätzung von CHF 379.**
 > Die alte Liste war durchgehend zu pessimistisch kalkuliert.
+
+---
+
+## Warum jetzt 4 Bestellungen statt 9
+
+**Ein Paket = ein Verkäufer.** AliExpress versendet pro Verkäufer, nicht pro
+Warenkorb. Die Zahl der Pakete bestimmst du also nicht durch die Aufteilung der
+Liste, sondern dadurch, bei wie vielen verschiedenen Verkäufern du bestellst.
+
+Die alte Aufteilung in 9 thematische Pakete kam von der **Zollgrenze CHF 62**.
+Bei einem Warenwert von CHF 213 ist die kein Thema mehr – selbst alles in einer
+Sendung bliebe darunter. Die Themen-Pakete haben damit keinen Zweck mehr.
+
+Die Liste ist jetzt nach **Verfügbarkeit** gruppiert statt nach Thema:
+
+| | Gruppe | ≈ CHF | Warum eigener Verkäufer |
+|---|---|---|---|
+| **A** | ESP32-Boards + Breakouts | 46 | ESP-Spezialisten; Board und Breakout müssen zueinander passen |
+| **B** | Alles Allgemeine: Sensoren, Module, Treiber, Servos, Ton, Relais, Verbrauchsmaterial | 106 | führt **jeder** grössere Elektronik-Händler |
+| **C** | LED-Strips (WS2812B, UV) | 29 | LED-Händler, Meterware |
+| **D** | Motoren + Magnete | 18 | Motoren-/Magnet-Händler (z. B. Bringsmart) |
+| | *Arcade-Taster* | 9 | Arcade-Teile; meist eigener Shop → sonst 5. Paket |
+
+**Gruppe B ist der eigentliche Gewinn:** 20 Positionen, gut die Hälfte des
+Warenwerts, und es gibt viele Händler, die das komplett führen.
+
+### So bündelst du B selbst (5 Minuten in der App)
+
+1. Öffne aus Gruppe B das Angebot mit den meisten Verkäufen – den
+   [Relais-Händler](https://de.aliexpress.com/item/1005006280813881.html) (4000+)
+   oder den [LM2596-Händler](https://de.aliexpress.com/item/1005003516383470.html) (5000+).
+2. Tippe auf den **Shop-Namen** über dem Produkt.
+3. Nutze die **Suche innerhalb des Shops** für die übrigen Positionen der Gruppe.
+4. Was der Shop nicht führt, nimmst du aus der Liste unten beim verlinkten Anbieter.
+
+> **Ich kann diesen Schritt nicht für dich machen.** Verkäufer- und Shop-Seiten
+> liegen bei AliExpress hinter demselben Bot-Schutz wie die Produktseiten – ich sehe
+> nur die Trefferlisten. Deshalb ist unten pro Position der beste Einzelanbieter
+> verlinkt, und das Bündeln machst du im letzten Schritt.
+
+> **Der Kompromiss:** Ein Bündel-Händler ist selten bei jeder einzelnen Position
+> der billigste. Rechne mit CHF 10–20 Aufpreis auf die Ware – und spare dafür
+> 5 Versandkosten, 5 Sendungsverfolgungen und 5 Gelegenheiten, dass ein Paket
+> hängen bleibt. Bei diesem Zeitplan ist das ein guter Tausch.
 
 ---
 
@@ -23,21 +67,48 @@ Lieferland Schweiz, sortiert nach Bestellungen).
 |---|---|
 | **bestätigt** | Preis stand am 18.09.2026 so auf der AliExpress-Trefferliste, in CHF, Lieferland Schweiz. |
 | **≈ Neukunden-Deal** | AliExpress zeigt meiner Session (ohne Bestellhistorie) den Willkommenspreis **CHF 0.92**. Das ist kein echter Preis. Angegeben ist der durchgestrichene Originalpreis – das ist die **Obergrenze**, dein echter Preis liegt darunter. |
-| **Versand** | **Nicht ermittelbar.** Die Produktdetailseiten von AliExpress haben den Bot-Schutz ausgelöst; nur die Trefferlisten waren lesbar. Bei vielen Angeboten stand «Kostenloser Versand ab CHF 9». |
+| **Versand** | **Nicht ermittelbar** (Bot-Schutz, siehe «Offene Punkte»). Bei vielen Angeboten stand «Kostenloser Versand ab CHF 9» – bei gebündelten Bestellungen dürfte das meist greifen. |
 
 > **Varianten-Dropdowns prüfen.** Alle Preise gelten für die Standardvariante der
 > Trefferliste. «1pc / 5pcs / 10pcs» und «5V / 12V» ändern den Preis deutlich –
 > das ist bei diesen Artikeln wichtiger als der Titel.
 
-> **Zollgrenze CHF 62** ist bei diesen Beträgen kein Thema mehr: kein Paket kommt
-> auch nur in die Nähe. Die Aufteilung in 9 Pakete ergibt sich jetzt nur noch
-> daraus, dass jeder Verkäufer separat versendet.
+---
+
+## 🇨🇳 Gruppe A · ESP32 — ≈ CHF 46
+
+| Menge | Artikel | CHF/Stk | Total | Angebot |
+|---|---|---|---|---|
+| 10 | ESP32 DevKit ⚠️ **38 Pin, ESP-WROOM-32** | 1.80 **bestätigt** · 4.8★ · 1000+ | 18.00 | [ESP-WROOM-32 DevKitC 38PINS](https://de.aliexpress.com/item/1005007059778300.html) |
+| | *Sicherere Alternative, mehr Verkäufe* | 4.17 **bestätigt** · 4.8★ · 4000+ | 41.70 | [ESP-32 30/38-Pin CP2102](https://de.aliexpress.com/item/1005006220389074.html) |
+| 10 | Schraubklemmen-Breakout (38 Pin) | 2.83 *≈ Neukunden-Deal* · 4.8★ · 900+ | ≈ 28.30 | [ESP-32S 38pin Anschluss-Schraube-Board](https://de.aliexpress.com/item/1005006026098254.html) |
+
+> **Der Schraubklemmen-Breakout heisst auf AliExpress «GPIO 1 in 2» oder «1 zu 2»** –
+> nicht «screw terminal». Deshalb war er über neun Suchen hinweg unauffindbar.
+> Zwei weitere Anbieter, beide 38-Pin, beide 4.8★:
+> [38-PIN Schmalversion, CHF 2.21](https://de.aliexpress.com/item/1005004478557343.html) ·
+> [ESP-WROOM-32 schmale Version, CHF 2.54](https://de.aliexpress.com/item/1005008806055319.html)
+>
+> ⚠️ **Boards und Breakouts beim selben Verkäufer bestellen.** Die 38-Pin-Boards gibt
+> es in zwei Platinenbreiten («schmal» und «breit»). Passt die Breite nicht, sitzt
+> das Board nicht auf dem Breakout. Beim selben Verkäufer passt es garantiert – und
+> es ist ohnehin ein Paket weniger.
+>
+> Teurere Alternative mit Status-LEDs und mehreren 5-V-/3,3-V-Abgriffen:
+> [Freenove Terminal Block Shield, CHF 16.76](https://de.aliexpress.com/item/1005005879655901.html)
+> – für 10 Stationen mit CHF 168 zu teuer, aber gut für die eine Station, an der du
+> am meisten steckst.
+
+> Zum Vergleich: **Bastelgarage** verlangt für ein ESP32-DevKit CHF 15–18 pro Stück.
+> Die 10 Boards würden in der Schweiz rund CHF 160 kosten.
 
 ---
 
-## 🇨🇳 AliExpress — jetzt bestellen (7–21 Tage)
+## 🇨🇳 Gruppe B · Allgemeine Elektronik — ≈ CHF 106
 
-### Paket 1 · Kleinsensoren — ≈ CHF 23
+**Das Bündel-Paket.** 20 Positionen, die jeder grössere Elektronik-Händler führt.
+
+### B1 · Kleinsensoren — ≈ CHF 22
 
 | Menge | Artikel | CHF/Stk | Total | Angebot |
 |---|---|---|---|---|
@@ -49,74 +120,24 @@ Lieferland Schweiz, sortiert nach Bestellungen).
 | 10 | LDR-Modul ⚠️ **4-Pin, LM393, mit `D0`** | 0.30 **bestätigt** · 4.8★ · 2000+ | 3.00 | [Fotowiderstand-Modul 4pin LM393](https://de.aliexpress.com/item/1005002327161114.html) |
 | 5 | RCWL-0516 Mikrowellen-Radar | 0.39 **bestätigt** · 4.7★ · 900+ | 1.95 | [RCWL-0516](https://de.aliexpress.com/item/32704946341.html) |
 
-### Paket 2 · Grosssensoren — ≈ CHF 29
+### B2 · Grosssensoren — ≈ CHF 20
 
 | Menge | Artikel | CHF/Stk | Total | Angebot |
 |---|---|---|---|---|
 | 5 | E18-D80NK IR-Reflexlichtschranke ⚠️ NPN/NO | 2.37 *≈ Neukunden-Deal* · 4.9★ · 500+ | ≈ 11.85 | [E18-D80NK 3–80 cm](https://de.aliexpress.com/item/1005006102521831.html) |
 | 2 | IR-Barriere, Sender + Empfänger | 2.86 **bestätigt** · 4.2★ · 1000+ | 5.72 | [Einzelstrahl-Infrarot-Barriere](https://de.aliexpress.com/item/1005005978321872.html) |
 | 5 | RC522 RFID-Leser + Tags | 0.56 **bestätigt** · 4.8★ · 5000+ | 2.80 | [RC522 Kit mit Tags](https://de.aliexpress.com/item/1005006440663319.html) |
-| 4 | Arcade-Taster 60 mm, beleuchtet ⚠️ 12-V-Variante | 2.25 **bestätigt** · 4.9★ · 1000+ | 9.00 | [60 mm Arcade-Taste 5/12 V](https://de.aliexpress.com/item/33028873701.html) |
 
-### Paket 3 · ESP32 — ≈ CHF 18–42
-
-| Menge | Artikel | CHF/Stk | Total | Angebot |
-|---|---|---|---|---|
-| 10 | ESP32 DevKit ⚠️ **38 Pin, ESP-WROOM-32** | 1.80 **bestätigt** · 4.8★ · 1000+ | 18.00 | [ESP-WROOM-32 DevKitC 38PINS](https://de.aliexpress.com/item/1005007059778300.html) |
-| | *Sicherere Alternative, mehr Verkäufe* | 4.17 **bestätigt** · 4.8★ · 4000+ | 41.70 | [ESP-32 30/38-Pin CP2102](https://de.aliexpress.com/item/1005006220389074.html) |
-
-> Zum Vergleich: **Bastelgarage** verlangt für ein ESP32-DevKit CHF 15–18 pro Stück.
-> Die 10 Boards würden in der Schweiz rund CHF 160 kosten. AliExpress lohnt sich hier klar.
-
-### Paket 4 · Adapter & Treiber — ≈ CHF 44
+### B3 · Adapter & Treiber — ≈ CHF 16
 
 | Menge | Artikel | CHF/Stk | Total | Angebot |
 |---|---|---|---|---|
-| 10 | **ESP32 Schraubklemmen-Breakout (38 Pin)** | ≈ 2.83 *≈ Neukunden-Deal* · 4.8★ · 900+ | ≈ 28.30 | [ESP32 Breakout GPIO 1-in-2, 38 Pin, Schraubanschluss](https://de.aliexpress.com/item/1005006026098254.html) |
 | 10 | PCF8574 I/O-Expander | 0.58 **bestätigt** · 4.9★ · 1000+ | 5.80 | [TZT PCF8574 Modul](https://de.aliexpress.com/item/1005009188039073.html) |
 | 8 | IRF520 MOSFET-Modul | 0.61 **bestätigt** (5er-Pack CHF 2.75) · 4.9★ · 900+ | ≈ 5.00 | [IRF520 MOS-Treiber 5/10 Stk](https://de.aliexpress.com/item/1005006157177189.html) |
 | 5 | 74AHCT125 Pegelwandler (DIP-14) | 1.67 / 5 Stk **bestätigt** · 4.9★ · 2000+ | 1.67 | [SN74AHCT125N DIP-14](https://de.aliexpress.com/item/1005007655828920.html) |
 | 10 | LM2596 Step-Down 12 → 5 V | 0.38 **bestätigt** · 4.9★ · 5000+ | 3.80 | [LM2596S 3 A einstellbar](https://de.aliexpress.com/item/1005003516383470.html) |
 
-> **Der Schraubklemmen-Breakout heisst auf AliExpress «GPIO 1 in 2» oder
-> «1 zu 2»** – nicht «screw terminal». Deshalb war er über neun Suchen hinweg
-> unauffindbar. Drei brauchbare Anbieter, alle 38-Pin, alle 4.8★:
->
-> | Angebot | ca. CHF | Verkäufe |
-> |---|---|---|
-> | [ESP-32S 38pin Anschluss-Schraube-Board](https://de.aliexpress.com/item/1005006026098254.html) | 2.83 | 900+ |
-> | [38-PIN Schmalversion](https://de.aliexpress.com/item/1005004478557343.html) | 2.21 | 900+ |
-> | [ESP-WROOM-32, 38PIN schmale Version](https://de.aliexpress.com/item/1005008806055319.html) | 2.54 | 700+ |
->
-> ⚠️ **«Schmalversion» und «breite Version» prüfen.** Die 38-Pin-ESP32-Boards gibt
-> es in zwei Platinenbreiten. Passt die Breite nicht, sitzt das Board nicht auf dem
-> Breakout. Am sichersten: Breakouts beim selben Verkäufer bestellen wie die Boards.
->
-> Teurere Alternative mit Status-LEDs und mehreren 5-V-/3,3-V-Abgriffen:
-> [Freenove Terminal Block Shield, CHF 16.76](https://de.aliexpress.com/item/1005005879655901.html)
-> – für 10 Stationen mit CHF 168 zu teuer, aber gut für die eine Station, an der du
-> am meisten steckst.
-
-### Paket 5 · Motoren & Magnete — ≈ CHF 18
-
-| Menge | Artikel | CHF/Stk | Total | Angebot |
-|---|---|---|---|---|
-| 1 | JGY-370 Schneckengetriebemotor 12 V ⚠️ **20–40 U/min wählen** | 3.37 **bestätigt** · 4.8★ · 5000+ | 3.37 | [ZGY370/JGY370 4632 6/12/24 V](https://de.aliexpress.com/item/1005004615731578.html) |
-| 3 | L298N H-Brücke | 1.37 **bestätigt** · 4.9★ | 4.11 | [EGBO L298N Dual-H-Brücke](https://de.aliexpress.com/item/1005007130054374.html) |
-| 2 | Hubmagnet 12 V Push-Pull, **Hub 10 mm, 25 N** | 2.64 **bestätigt** · 4.9★ · 4000+ | 5.28 | [JF-1039 12 V 25 N Hub 10 mm](https://de.aliexpress.com/item/32618067363.html) |
-| 2 | Elektro-Haftmagnet 12 V, **P30/25, 15 kg / 150 N** | 2.49 **bestätigt** · 4.9★ | 4.98 | [P30/25 Haltemagnet 15 kg](https://de.aliexpress.com/item/1005004388519956.html) |
-
-> **Haftmagnet: 15 kg statt 25 kg.** Die 25-kg-Klasse kostet bei gleicher Bauart
-> CHF 14 statt CHF 2.50 – ein Faktor 5 für eine Puppe, die vielleicht 3 kg wiegt.
-> Wenn du auf 25 kg bestehst: [34/25K, 30 kg, CHF 13.89](https://de.aliexpress.com/item/32819597779.html).
-
-> ⚠️ **Winde als Erstes aufbauen und testen**, sobald das Paket da ist. Es gibt
-> keinen Reservemotor – ein Test im Oktober lässt noch Zeit zum Nachbestellen.
-
-> **Der JGY-370-Preis hängt stark von der Drehzahl-Variante ab.** CHF 3.37 ist der
-> Einstiegspreis der Trefferliste; langsame Varianten (20–40 U/min) können mehr kosten.
-
-### Paket 6 · Servos & Ton — ≈ CHF 22
+### B4 · Servos & Ton — ≈ CHF 22
 
 | Menge | Artikel | CHF/Stk | Total | Angebot |
 |---|---|---|---|---|
@@ -126,7 +147,27 @@ Lieferland Schweiz, sortiert nach Bestellungen).
 | 5 | Lautsprecher 3 W / 8 Ω im Gehäuse | 1.12 **bestätigt** · 4.7★ · 2000+ | 5.60 | [3525/2030 Hohlraumlautsprecher](https://de.aliexpress.com/item/1005007640238935.html) |
 | 3 | PAM8403 Verstärker | 0.90 **bestätigt** · 4.9★ · 2000+ | 2.70 | [PAM8403 2×3 W](https://de.aliexpress.com/item/1005008554786164.html) |
 
-### Paket 7 · LED-Strips — ≈ CHF 30
+### B5 · 12-V-Licht & Relais — ≈ CHF 18
+
+| Menge | Artikel | CHF/Stk | Total | Angebot |
+|---|---|---|---|---|
+| 10 | 12-V-COB-LED-Modul | 5.29 / 10 Stk *≈ Neukunden-Deal* · 4.9★ · 10 000+ | ≈ 5.29 | [12 V COB-LED-Module, 10 Stk, IP65](https://de.aliexpress.com/item/1005008406091646.html) |
+| 1 | Stroboskop 12 V LED | 1.19 **bestätigt** · 4.7★ · 3000+ | 1.19 | [12-LED-Stroboskop 12–24 V](https://de.aliexpress.com/item/1005008034979845.html) |
+| 1 | Relaismodul 8-Kanal ⚠️ **5 V + Optokoppler** | ≈ 4–5 **Variante wählen** · 4.7★ · 4000+ | ≈ 4.50 | [1/2/4/6/8-Kanal Relais 5 V Optokoppler](https://de.aliexpress.com/item/1005006280813881.html) |
+| 5 | Relaismodul 2-Kanal 5 V | 1.32 **bestätigt** · 4.7★ · 4000+ | 6.60 | *dasselbe Angebot, Variante «2 Kanal 5V»* |
+
+### B6 · Verbrauchsmaterial — ≈ CHF 8
+
+| Menge | Artikel | CHF | Angebot |
+|---|---|---|---|
+| 100 | 1N4007 Dioden ⚠️ **Freilauf an jede Spule – Pflicht** | 1.47 **bestätigt** · 4.9★ · 3000+ | [100 Stk 1N4007 1 A 1000 V DO-41](https://de.aliexpress.com/item/1005006454795578.html) |
+| 10 | Elko 1000 µF / 16 V (an jeden LED-Strip-Anfang) | ≈ 1.87 *≈ Neukunden-Deal* · 4.9★ | [Elektrolytkondensatoren, Wert wählen](https://de.aliexpress.com/item/1005005691916127.html) |
+| 600 | Widerstandssortiment ¼ W, 1 %, 30 Werte | ≈ 1.98 *≈ Neukunden-Deal* · 4.9★ · 2000+ | [600 Stk Metallfilm-Widerstandsset](https://de.aliexpress.com/item/1005006179281226.html) |
+| 120 | Dupont-Kabel-Set (M-M, M-F, F-F) | ≈ 2.12 *≈ Neukunden-Deal* · 4.9★ · 3000+ | [Dupont 40–120 Stk, 10/20/30 cm](https://de.aliexpress.com/item/1005005364298980.html) |
+
+---
+
+## 🇨🇳 Gruppe C · LED-Strips — ≈ CHF 29
 
 | Menge | Artikel | CHF/Stk | Total | Angebot |
 |---|---|---|---|---|
@@ -138,31 +179,52 @@ Lieferland Schweiz, sortiert nach Bestellungen).
 > LED-Dichte und Spannung stehen alle im selben Angebot. Der angezeigte Preis ist
 > immer der der günstigsten Variante. Rechne beim WS2812B eher mit CHF 12–15 pro 5-m-Rolle.
 
+> Viele LED-Händler führen WS2812B **und** UV – prüf beim Bestellen, ob dein
+> WS2812B-Verkäufer auch den UV-Strip hat. Dann wird aus C ein einziges Paket.
+
 > Zum Vergleich: **Bastelgarage** verkauft 0.33 m WS2812B für CHF 4.50 – das wären
 > rund CHF 68 pro 5 m.
 
-### Paket 8 · 12-V-Licht & Relais — ≈ CHF 17
+---
+
+## 🇨🇳 Gruppe D · Motoren & Magnete — ≈ CHF 18
 
 | Menge | Artikel | CHF/Stk | Total | Angebot |
 |---|---|---|---|---|
-| 10 | 12-V-COB-LED-Modul | 5.29 / 10 Stk *≈ Neukunden-Deal* · 4.9★ · 10 000+ | ≈ 5.29 | [12 V COB-LED-Module, 10 Stk, IP65](https://de.aliexpress.com/item/1005008406091646.html) |
-| 1 | Stroboskop 12 V LED | 1.19 **bestätigt** · 4.7★ · 3000+ | 1.19 | [12-LED-Stroboskop 12–24 V](https://de.aliexpress.com/item/1005008034979845.html) |
-| 1 | Relaismodul 8-Kanal ⚠️ **5 V + Optokoppler** | ≈ 4–5 **Variante wählen** · 4.7★ · 4000+ | ≈ 4.50 | [1/2/4/6/8-Kanal Relais 5 V Optokoppler](https://de.aliexpress.com/item/1005006280813881.html) |
-| 5 | Relaismodul 2-Kanal 5 V | 1.32 **bestätigt** · 4.7★ · 4000+ | 6.60 | *dasselbe Angebot, Variante «2 Kanal 5V»* |
+| 1 | JGY-370 Schneckengetriebemotor 12 V ⚠️ **20–40 U/min wählen** | 3.37 **bestätigt** · 4.8★ · 5000+ | 3.37 | [ZGY370/JGY370 4632 6/12/24 V](https://de.aliexpress.com/item/1005004615731578.html) |
+| 3 | L298N H-Brücke | 1.37 **bestätigt** · 4.9★ | 4.11 | [EGBO L298N Dual-H-Brücke](https://de.aliexpress.com/item/1005007130054374.html) |
+| 2 | Hubmagnet 12 V Push-Pull, **Hub 10 mm, 25 N** | 2.64 **bestätigt** · 4.9★ · 4000+ | 5.28 | [JF-1039 12 V 25 N Hub 10 mm](https://de.aliexpress.com/item/32618067363.html) |
+| 2 | Elektro-Haftmagnet 12 V, **P30/25, 15 kg / 150 N** | 2.49 **bestätigt** · 4.9★ | 4.98 | [P30/25 Haltemagnet 15 kg](https://de.aliexpress.com/item/1005004388519956.html) |
 
-> Das Relais-Angebot deckt beide Positionen ab – 8-Kanal und 2-Kanal in einer
-> Bestellung, das spart einen Versand.
+> **Die L298N passen auch in Gruppe B**, falls dein Bündel-Händler sie führt –
+> dann wird D noch kleiner. Magnet- und Motorenhändler führen sie meist nicht.
 
-### Paket 9 · Verbrauchsmaterial — ≈ CHF 8
+> **Haftmagnet: 15 kg statt 25 kg.** Die 25-kg-Klasse kostet bei gleicher Bauart
+> CHF 14 statt CHF 2.50 – ein Faktor 5 für eine Puppe, die vielleicht 3 kg wiegt.
+> Wenn du auf 25 kg bestehst: [34/25K, 30 kg, CHF 13.89](https://de.aliexpress.com/item/32819597779.html).
 
-| Menge | Artikel | CHF | Angebot |
-|---|---|---|---|
-| 100 | 1N4007 Dioden ⚠️ **Freilauf an jede Spule – Pflicht** | 1.47 **bestätigt** · 4.9★ · 3000+ | [100 Stk 1N4007 1 A 1000 V DO-41](https://de.aliexpress.com/item/1005006454795578.html) |
-| 10 | Elko 1000 µF / 16 V (an jeden LED-Strip-Anfang) | ≈ 1.87 *≈ Neukunden-Deal* · 4.9★ | [Elektrolytkondensatoren, Wert wählen](https://de.aliexpress.com/item/1005005691916127.html) |
-| 600 | Widerstandssortiment ¼ W, 1 %, 30 Werte | ≈ 1.98 *≈ Neukunden-Deal* · 4.9★ · 2000+ | [600 Stk Metallfilm-Widerstandsset](https://de.aliexpress.com/item/1005006179281226.html) |
-| 120 | Dupont-Kabel-Set (M-M, M-F, F-F) | ≈ 2.12 *≈ Neukunden-Deal* · 4.9★ · 3000+ | [Dupont 40–120 Stk, 10/20/30 cm](https://de.aliexpress.com/item/1005005364298980.html) |
+> ⚠️ **Winde als Erstes aufbauen und testen**, sobald das Paket da ist. Es gibt
+> keinen Reservemotor – ein Test im Oktober lässt noch Zeit zum Nachbestellen.
+> **Deshalb: Gruppe D zuerst bestellen**, auch wenn sie die kleinste ist.
 
-**AliExpress Ware total ≈ CHF 213** (ohne Versand)
+> **Der JGY-370-Preis hängt stark von der Drehzahl-Variante ab.** CHF 3.37 ist der
+> Einstiegspreis der Trefferliste; langsame Varianten (20–40 U/min) können mehr kosten.
+
+---
+
+## 🇨🇳 Einzelposition · Arcade-Taster — ≈ CHF 9
+
+| Menge | Artikel | CHF/Stk | Total | Angebot |
+|---|---|---|---|---|
+| 4 | Arcade-Taster 60 mm, beleuchtet ⚠️ **12-V-Variante** | 2.25 **bestätigt** · 4.9★ · 1000+ | 9.00 | [60 mm Arcade-Taste 5/12 V](https://de.aliexpress.com/item/33028873701.html) |
+
+> Arcade-Teile kommen meist aus spezialisierten Shops. **Versuch zuerst, sie in
+> Gruppe B unterzubringen** – viele Elektronik-Händler führen auch beleuchtete
+> Drucktaster. Wenn nicht, ist das dein 5. Paket. Für CHF 9 Ware lohnt sich ein
+> eigener Versand kaum – notfalls streichen und stattdessen normale Drucktaster
+> aus Gruppe B nehmen.
+
+**AliExpress Ware total ≈ CHF 213**
 
 ---
 
@@ -190,6 +252,17 @@ Lieferland Schweiz, sortiert nach Bestellungen).
 
 ---
 
+## Reihenfolge
+
+1. **Gruppe D (Motoren & Magnete) zuerst.** Die Winde ist das einzige Teil ohne
+   Reserve und mit echtem Ausfallrisiko. Sofort nach Ankunft testen.
+2. **Gruppe A (ESP32) und B (Elektronik)** gleich hinterher – das ist der Grossteil.
+3. **Gruppe C (LED-Strips)** kann warten, Deko-Licht ist nicht kritisch.
+4. Gruppe B und A liessen sich im Notfall auch in der Schweiz nachkaufen
+   (Bastelgarage, BerryBase, ShopOfThings) – zu etwa dem Fünffachen.
+
+---
+
 ## Offene Punkte
 
 ### 1 · Versandkosten
@@ -203,11 +276,15 @@ Alle landen auf derselben Challenge – die Sperre hängt an der Rechenzentrums-
 nicht am Navigationsweg. Weiter zu gehen hiesse, die Schutzmassnahme selbst
 auszuhebeln; das ist nicht gemacht worden.
 
+Dasselbe gilt für Shop- und Verkäuferseiten – deshalb muss das Bündeln der
+Gruppe B von dir kommen.
+
 Die Trefferlisten sind davon nicht betroffen und waren durchgehend lesbar, deshalb
 stimmen die Artikelpreise.
 
-**Wenn du die 9 Warenkörbe angelegt hast, schick mir Screenshots der
-Versandkostenzeilen** – dann rechne ich die Pakete sauber durch.
+**Wenn du die Warenkörbe angelegt hast, schick mir Screenshots der
+Versandkostenzeilen** – dann rechne ich sauber durch, ob sich die Bündelung
+gelohnt hat.
 
 ### 2 · Nebelmaschinen-Fernbedienung
 
@@ -221,16 +298,15 @@ Wenn nein → SwitchBot Bot, CHF 20.90, per Bluetooth direkt vom Pi.
 
 1. **ESP32 DevKit: 38-Pin-Version.** Die 30-Pin-Boards passen nicht auf das Breakout.
    Beide Varianten stecken oft im selben Angebot – Dropdown kontrollieren.
-   Zusätzlich auf die **Platinenbreite** achten (schmal vs. breit) und Boards und
-   Breakouts nach Möglichkeit beim selben Verkäufer bestellen.
+   Zusätzlich auf die **Platinenbreite** achten (schmal vs. breit); Boards und
+   Breakouts beim selben Verkäufer bestellen.
 2. **UV-Strip: 12 V**, 395–400 nm, nicht 365 nm. Er hängt an der 12-V-Schiene.
 3. **WS2812B: 5 V**, wirklich WS2812B (nicht WS2811), IP30. Variante «5 m / 30 LED/m».
 4. **LDR-Modul: 4 Pins mit `D0` und Poti.** Nur der Digitalausgang umgeht den
    ADC2/WLAN-Konflikt des ESP32 (`10`).
 5. **Relais: 5 V Spulenspannung und Optokoppler**, nicht die 12-V-Variante.
 6. **JGY-370: langsame Ausführung, 20–40 U/min.**
-7. **Pakete 1, 2, 3 und 5 zuerst.** Paket 4 und 9 liessen sich im Notfall auch in
-   der Schweiz nachkaufen.
+7. **Arcade-Taster: 12-V-Variante**, nicht 5 V.
 
 ---
 
@@ -241,23 +317,21 @@ Wenn nein → SwitchBot Bot, CHF 20.90, per Bluetooth direkt vom Pi.
 | 433-MHz-Handsender + Empfänger | Nicht gewünscht. Not-Aus steht im Node-RED-Dashboard auf dem Handy (`06`). |
 | JGY-370 Reservemotor | Stattdessen: Winde sofort nach Ankunft testen. |
 | Netzteile, MicroSD | Aus dem Bestand. |
+| Aufteilung in 9 Zoll-Pakete | Bei CHF 213 Warenwert gegenstandslos. Siehe oben. |
 
 ---
 
 ## Erreichbarkeit der Shops (Stand 18.09.2026)
 
-Für die nächste Session dokumentiert, welche Domains aus der Custom-Network-Access-
-Konfiguration tatsächlich funktionieren:
-
 | Domain | Status |
 |---|---|
 | `de.aliexpress.com` – **Trefferlisten** | ✅ funktioniert, Preise in CHF, Lieferland CH |
-| `de.aliexpress.com` – **Produktdetailseiten** | ❌ Bot-Schutz, Weiterleitung auf `/_____tmd_____/punish` |
+| `de.aliexpress.com` – **Produkt- und Shop-Seiten** | ❌ Bot-Schutz, Weiterleitung auf `/_____tmd_____/punish` |
 | `ae01.alicdn.com` | ✅ Bilder-CDN |
 | `www.bastelgarage.ch` | ✅ vollständig, servergerendert |
 | `www.berrybase.ch` | ✅ vollständig |
-| `www.galaxus.ch` / `www.digitec.ch` | ⚠️ Startseite ja, **Suche 403** («Access denied», Rechenzentrums-IP) |
 | `shopofthings.ch` | ✅ seit Ergänzung der nackten Domain in der Allowlist (`*.shopofthings.ch` allein reicht nicht, der Shop leitet `www` → nackte Domain um) |
+| `www.galaxus.ch` / `www.digitec.ch` | ⚠️ Startseite ja, **Suche 403** («Access denied», Rechenzentrums-IP) |
 | `www.pi-shop.ch` | ❌ Cloudflare-Challenge. Nach Freigabe von `challenges.cloudflare.com` lädt die Prüfung zwar, läuft aber nicht durch – Rechenzentrums-IP. Bleibt gesperrt. |
 
 **Technische Notiz für die nächste Session:** Chromium aus `/opt/pw-browsers`
