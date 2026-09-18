@@ -6,12 +6,11 @@ Lieferland Schweiz, sortiert nach Bestellungen).
 
 | | CHF |
 |---|---|
-| AliExpress (9 Pakete, Ware) | **≈ 185** |
-| ESP32-Schraubklemmen-Breakouts (nicht gefunden, s. u.) | offen, ≈ 20–30 |
+| AliExpress (9 Pakete, Ware, inkl. Breakouts) | **≈ 213** |
 | Versandkosten AliExpress | nicht auslesbar, ≈ 0–30 |
 | Baumarkt | ≈ 40 |
 | Netzteile, SD-Karten | **0** – vorhanden |
-| **Total** | **≈ 245–285** |
+| **Total** | **≈ 253–283** |
 
 > **Das ist rund CHF 100 weniger als die bisherige Schätzung von CHF 379.**
 > Die alte Liste war durchgehend zu pessimistisch kalkuliert.
@@ -69,20 +68,34 @@ Lieferland Schweiz, sortiert nach Bestellungen).
 > Zum Vergleich: **Bastelgarage** verlangt für ein ESP32-DevKit CHF 15–18 pro Stück.
 > Die 10 Boards würden in der Schweiz rund CHF 160 kosten. AliExpress lohnt sich hier klar.
 
-### Paket 4 · Adapter & Treiber — ≈ CHF 16 (+ Breakouts)
+### Paket 4 · Adapter & Treiber — ≈ CHF 44
 
 | Menge | Artikel | CHF/Stk | Total | Angebot |
 |---|---|---|---|---|
-| 10 | **ESP32 Schraubklemmen-Breakout (38 Pin)** | — | **offen** | ⚠️ **nicht gefunden – siehe unten** |
+| 10 | **ESP32 Schraubklemmen-Breakout (38 Pin)** | ≈ 2.83 *≈ Neukunden-Deal* · 4.8★ · 900+ | ≈ 28.30 | [ESP32 Breakout GPIO 1-in-2, 38 Pin, Schraubanschluss](https://de.aliexpress.com/item/1005006026098254.html) |
 | 10 | PCF8574 I/O-Expander | 0.58 **bestätigt** · 4.9★ · 1000+ | 5.80 | [TZT PCF8574 Modul](https://de.aliexpress.com/item/1005009188039073.html) |
 | 8 | IRF520 MOSFET-Modul | 0.61 **bestätigt** (5er-Pack CHF 2.75) · 4.9★ · 900+ | ≈ 5.00 | [IRF520 MOS-Treiber 5/10 Stk](https://de.aliexpress.com/item/1005006157177189.html) |
 | 5 | 74AHCT125 Pegelwandler (DIP-14) | 1.67 / 5 Stk **bestätigt** · 4.9★ · 2000+ | 1.67 | [SN74AHCT125N DIP-14](https://de.aliexpress.com/item/1005007655828920.html) |
 | 10 | LM2596 Step-Down 12 → 5 V | 0.38 **bestätigt** · 4.9★ · 5000+ | 3.80 | [LM2596S 3 A einstellbar](https://de.aliexpress.com/item/1005003516383470.html) |
 
-> ⚠️ **Der Schraubklemmen-Breakout ist die einzige Position, die ich nicht belegen kann.**
-> Fünf verschiedene Suchen auf AliExpress (DE und EN) liefern nur ESP32-Boards und
-> lose PCB-Klemmenblöcke, kein 38-Pin-Trägerboard mit Schraubklemmen. Bastelgarage
-> und BerryBase führen es ebenfalls nicht. Details im Abschnitt «Offene Punkte».
+> **Der Schraubklemmen-Breakout heisst auf AliExpress «GPIO 1 in 2» oder
+> «1 zu 2»** – nicht «screw terminal». Deshalb war er über neun Suchen hinweg
+> unauffindbar. Drei brauchbare Anbieter, alle 38-Pin, alle 4.8★:
+>
+> | Angebot | ca. CHF | Verkäufe |
+> |---|---|---|
+> | [ESP-32S 38pin Anschluss-Schraube-Board](https://de.aliexpress.com/item/1005006026098254.html) | 2.83 | 900+ |
+> | [38-PIN Schmalversion](https://de.aliexpress.com/item/1005004478557343.html) | 2.21 | 900+ |
+> | [ESP-WROOM-32, 38PIN schmale Version](https://de.aliexpress.com/item/1005008806055319.html) | 2.54 | 700+ |
+>
+> ⚠️ **«Schmalversion» und «breite Version» prüfen.** Die 38-Pin-ESP32-Boards gibt
+> es in zwei Platinenbreiten. Passt die Breite nicht, sitzt das Board nicht auf dem
+> Breakout. Am sichersten: Breakouts beim selben Verkäufer bestellen wie die Boards.
+>
+> Teurere Alternative mit Status-LEDs und mehreren 5-V-/3,3-V-Abgriffen:
+> [Freenove Terminal Block Shield, CHF 16.76](https://de.aliexpress.com/item/1005005879655901.html)
+> – für 10 Stationen mit CHF 168 zu teuer, aber gut für die eine Station, an der du
+> am meisten steckst.
 
 ### Paket 5 · Motoren & Magnete — ≈ CHF 18
 
@@ -149,7 +162,7 @@ Lieferland Schweiz, sortiert nach Bestellungen).
 | 600 | Widerstandssortiment ¼ W, 1 %, 30 Werte | ≈ 1.98 *≈ Neukunden-Deal* · 4.9★ · 2000+ | [600 Stk Metallfilm-Widerstandsset](https://de.aliexpress.com/item/1005006179281226.html) |
 | 120 | Dupont-Kabel-Set (M-M, M-F, F-F) | ≈ 2.12 *≈ Neukunden-Deal* · 4.9★ · 3000+ | [Dupont 40–120 Stk, 10/20/30 cm](https://de.aliexpress.com/item/1005005364298980.html) |
 
-**AliExpress Ware total ≈ CHF 185** (ohne Breakouts, ohne Versand)
+**AliExpress Ware total ≈ CHF 213** (ohne Versand)
 
 ---
 
@@ -179,35 +192,24 @@ Lieferland Schweiz, sortiert nach Bestellungen).
 
 ## Offene Punkte
 
-### 1 · ESP32-Schraubklemmen-Breakout (38 Pin)
+### 1 · Versandkosten
 
-Nicht auffindbar. Gesucht auf AliExpress mit fünf Formulierungen
-(`ESP32 38 pin screw terminal expansion board`, `ESP32 screw terminal adapter board 38 pin`,
-`ESP32 breakout board terminal block`, `ESP32 Klemmenblock Adapterplatine`,
-`terminal block breakout board 38 pin development board`) sowie bei Bastelgarage
-und BerryBase. Ergebnis: entweder normale ESP32-Boards oder lose PCB-Klemmenblöcke.
+Nicht ermittelbar, und es bleibt dabei. Die AliExpress-Produktdetailseiten lösen
+den Bot-Schutz aus (Weiterleitung auf `/_____tmd_____/punish`), und nur dort stehen
+die echten Versandkosten in die Schweiz. Versucht wurden: echte Sitzung mit
+persistentem Profil, Einstieg über die Startseite, Klick aus der Trefferliste statt
+Direktaufruf, mobile Ansicht mit Telefon-Profil, drei Hosts (`de.`, `www.`, `m.`).
+Alle landen auf derselben Challenge – die Sperre hängt an der Rechenzentrums-IP,
+nicht am Navigationsweg. Weiter zu gehen hiesse, die Schutzmassnahme selbst
+auszuhebeln; das ist nicht gemacht worden.
 
-Drei Wege:
-
-1. **Du suchst selbst** in der AliExpress-App – dort greift eine andere Suchlogik
-   als auf der Web-Trefferliste. Schick mir den Link, dann prüfe ich ihn.
-2. **ShopOfThings** führt so etwas erfahrungsgemäss, ist aus meiner Session aber
-   nicht erreichbar (siehe unten).
-3. **Ohne Breakout:** ESP32 auf eine Lochrasterplatine löten, Schraubklemmen
-   danebensetzen. Kostet ca. CHF 0.50 pro Station statt CHF 2–3, aber Lötarbeit
-   für 10 Stationen.
-
-### 2 · Versandkosten
-
-Nicht ermittelbar. Die AliExpress-Produktdetailseiten lösen den Bot-Schutz aus
-(Weiterleitung auf `/_____tmd_____/punish`), und nur dort stehen die echten
-Versandkosten in die Schweiz. Die Trefferlisten waren durchgehend lesbar, deshalb
+Die Trefferlisten sind davon nicht betroffen und waren durchgehend lesbar, deshalb
 stimmen die Artikelpreise.
 
 **Wenn du die 9 Warenkörbe angelegt hast, schick mir Screenshots der
 Versandkostenzeilen** – dann rechne ich die Pakete sauber durch.
 
-### 3 · Nebelmaschinen-Fernbedienung
+### 2 · Nebelmaschinen-Fernbedienung
 
 Weiterhin offen: Ist die Fernbedienung abnehmbar (Buchse hinten am Gerät)?
 Wenn ja → 2-Kanal-Relais parallel zum Taster, kostet nichts.
@@ -219,6 +221,8 @@ Wenn nein → SwitchBot Bot, CHF 20.90, per Bluetooth direkt vom Pi.
 
 1. **ESP32 DevKit: 38-Pin-Version.** Die 30-Pin-Boards passen nicht auf das Breakout.
    Beide Varianten stecken oft im selben Angebot – Dropdown kontrollieren.
+   Zusätzlich auf die **Platinenbreite** achten (schmal vs. breit) und Boards und
+   Breakouts nach Möglichkeit beim selben Verkäufer bestellen.
 2. **UV-Strip: 12 V**, 395–400 nm, nicht 365 nm. Er hängt an der 12-V-Schiene.
 3. **WS2812B: 5 V**, wirklich WS2812B (nicht WS2811), IP30. Variante «5 m / 30 LED/m».
 4. **LDR-Modul: 4 Pins mit `D0` und Poti.** Nur der Digitalausgang umgeht den
@@ -253,8 +257,8 @@ Konfiguration tatsächlich funktionieren:
 | `www.bastelgarage.ch` | ✅ vollständig, servergerendert |
 | `www.berrybase.ch` | ✅ vollständig |
 | `www.galaxus.ch` / `www.digitec.ch` | ⚠️ Startseite ja, **Suche 403** («Access denied», Rechenzentrums-IP) |
-| `shopofthings.ch` | ❌ **Proxy-403.** Die Regel lautet `*.shopofthings.ch`, der Shop leitet aber `www` → nackte Domain um. Fix: `shopofthings.ch` zusätzlich in die Allowlist. |
-| `www.pi-shop.ch` | ❌ Cloudflare-Challenge, die nicht lösbar ist, weil `challenges.cloudflare.com` nicht in der Allowlist steht. Fix: Domain ergänzen. |
+| `shopofthings.ch` | ✅ seit Ergänzung der nackten Domain in der Allowlist (`*.shopofthings.ch` allein reicht nicht, der Shop leitet `www` → nackte Domain um) |
+| `www.pi-shop.ch` | ❌ Cloudflare-Challenge. Nach Freigabe von `challenges.cloudflare.com` lädt die Prüfung zwar, läuft aber nicht durch – Rechenzentrums-IP. Bleibt gesperrt. |
 
 **Technische Notiz für die nächste Session:** Chromium aus `/opt/pw-browsers`
 vertraut dem Egress-Proxy-CA nicht von Haus aus (`ERR_CERT_AUTHORITY_INVALID`).
