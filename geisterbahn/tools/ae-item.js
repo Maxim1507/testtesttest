@@ -284,7 +284,14 @@ async function run(ids, opts) {
       // ueber die ganze Seite, das jeden Variantenklick abfaengt – Playwright
       // meldet nur "Timeout", nicht "Captcha". Wir brauchen die Empfehlungen
       // nicht, also gar nicht laden.
-      if (/relationrecommend|_____tmd_____|baxia/i.test(r.request().url())) return r.abort();
+      //
+      // ABER: die Hauptnavigation nie abbrechen. Wird die Seite selbst auf
+      // /_____tmd_____/punish umgeleitet, ist das die harte IP-Sperre, und die muss
+      // sichtbar bleiben. Bricht man sie ab, bleibt p.url() die Originaladresse,
+      // die BOT-SCHUTZ-Erkennung greift nicht und der Datensatz kommt einfach leer
+      // zurueck – das sah eine ganze Session lang nach Drosselung aus.
+      const isNav = r.request().isNavigationRequest() && r.request().frame() === p.mainFrame();
+      if (!isNav && /relationrecommend|_____tmd_____|baxia/i.test(r.request().url())) return r.abort();
       return block.includes(r.request().resourceType()) ? r.abort() : r.continue();
     });
     return p;

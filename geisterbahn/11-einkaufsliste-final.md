@@ -336,7 +336,7 @@ Bündelst du um, **ändert sich der Versand mit** – im Warenkorb gegenprüfen.
 
 | Position | Was fehlt |
 |---|---|
-| Relaismodul 8-Kanal `1005006280813881` | Preis der Variante «8 Kanal 5V». Die Standardvariante zeigt 1.56 regulär; die Kanal-Varianten sind Bild-Kacheln und wurden von der AliExpress-Drosselung blockiert. Schätzung ≈ 4–5. |
+| Relaismodul 8-Kanal `1005006280813881` | Preis der Variante «8 Kanal 5V». Die Standardvariante zeigt 1.56 regulär. **Schau das bitte selbst in der App nach** – AliExpress hat diese IP am Abend des 18.09. gesperrt, und zwar auch für einen normalen Browser, nicht nur für das Skript. Schätzung ≈ 4–5. |
 | Board `1005008981904299` (Shop1104003965) | Preis der 38P-Variante; 1.84 gilt für «Expansion Board 30P». |
 | UV-Alternativen `33032788373`, `1005005812239262`, `33025833609` | Variantenpreise und ob 395–405 nm wirklich wählbar ist. |
 | Elko `1005005691916127` | Der bestätigte Preis gilt für die Standardvariante «25V 330µF, 10 Stk». Für **1000 µF / 16 V** die Variante wählen und den Preis gegenprüfen; die Staffel **0.96 ab 10 Stück** greift dort vermutlich auch. |

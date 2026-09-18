@@ -48,6 +48,67 @@ der Datei erklären den Aufruf.
 Lokal brauchst du weder den CA-Policy-Trick noch den festen `executablePath` aus der
 Cloud-Session – `npx playwright install chromium` genügt.
 
+### Dazugekommen in der lokalen Session (18.09.2026)
+
+| Datei | Zweck |
+|---|---|
+| `tools/ae-item.js` | **Produktseite** auslesen: Regulärpreis, Versand, Lieferfenster, Lagerbestand, Deal-Grenze, Staffelpreise, Varianten. `--variants` klickt alle Optionen durch, `--select "IP30,30LEDs-M,5m"` wählt eine Kombination, `--qty 10` trennt Deal-Grenze von Lagerbestand, `--pause N` setzt Sekunden zwischen Positionen. |
+| `tools/ae-store.js` | Suche **innerhalb eines Shops**, mit Relevanzfilter. Der Filter ist nötig, weil eine Shop-Suche ohne Treffer nicht leer zurückkommt, sondern **das ganze Sortiment** ausspielt – ohne Filter sieht jede Position nach «vorhanden» aus. |
+| `tools/gruppe-b.json` | Die 28 B-Positionen mit Suchbegriff und Relevanz-Schlüsselwörtern, Eingabe für `ae-store.js`. |
+
+`node_modules` liegt absichtlich **ausserhalb** des Repos, unter
+`~/privat/geisterbahn/.aetools`, mit dem Wrapper `.aetools/ae`, der `NODE_PATH`
+setzt. So bleibt Playwright aus dem Git-Baum.
+
+### Drei Fallen, die viel Zeit gekostet haben
+
+**1 · Unsichtbares Captcha blockiert Klicks, meldet aber «Timeout».**
+Beim Variantenwechsel feuert die API `mtop.aliexpress.pdp.pc.adjust`. Sie antwortet
+mit `FAIL_SYS_USER_VALIDATE` / `RGV587_ERROR` und legt ein **praktisch unsichtbares
+Overlay** über die ganze Seite: `div.baxia-dialog` mit einem iframe auf
+`/_____tmd_____/punish?...`, dazu `div.J_MIDDLEWARE_FRAME_WIDGET`. Playwright meldet
+nur «element not clickable», nicht «Captcha» – das sieht nach einem Selektorproblem
+aus. Gegenmittel in `ae-item.js`: die Requests `relationrecommend|_____tmd_____|baxia`
+per Route abbrechen **und** `killOverlays()` vor jedem Klick. Der Preis im DOM stimmt
+übrigens trotz des API-Fehlers, die Seite rechnet ihn lokal.
+
+**2 · Varianten sind teils Bild-Kacheln.** Das Label steht dann nicht im
+`title`-Attribut, sondern im `alt` des Kind-`img`. Ohne diesen Fallback sind ganze
+Variantengruppen unsichtbar – beim IRF520 kam «Farbe -> » zurück, als gäbe es keine
+Optionen. Ausserdem: **`scrollIntoView({block:'center'})` vor dem Klick ist nicht
+optional**, und der Viewport muss ≥ 1400 px hoch sein, sonst verdeckt der Sticky-Header
+die zentrierte Option.
+
+**3 · Zwei verschiedene Sperren sehen von aussen gleich aus.** Beide liefern denselben
+leeren Datensatz – Titel, Verkäufer, Preis alle `undefined`, Preisblock leer – haben aber
+nichts miteinander zu tun:
+
+- **Drosselung.** In Serienläufen ab der zweiten Position. Die Seite lädt normal, nur der
+  Preisblock bleibt leer. Kein anderes Seiten-Template (die Klassennamen sind identisch).
+  Gegenmittel: frische Seite pro Position, Retry auch bei leerem Preisblock, `--pause 25`
+  oder mehr. Nach ein paar Minuten geht es weiter.
+- **Harte IP-Sperre.** Die Seite wird auf `/_____tmd_____/punish?x5secdata=…` umgeleitet
+  und zeigt nur noch «Click to feedback >». Trifft **jeden** Abruf, auch den ersten, und
+  betrifft nicht nur Playwright: derselbe Aufruf im normalen Browser landet auf derselben
+  Challenge. Also hängt sie an der IP, nicht am Automatisierungs-Fingerprint. Weiterkommen
+  hiesse, das Captcha zu lösen – das ist nicht gemacht worden. Am Abend des 18.09.2026
+  war damit Schluss; die letzte offene Position (Relaismodul-Variante) fehlt deshalb.
+
+**So unterscheidest du sie:** `p.url()` nach dem `goto` ansehen. Enthält sie `punish`,
+ist es die harte Sperre – dann hilft nur warten oder eine andere Leitung, nicht `--pause`.
+
+⚠️ **Fallstrick im eigenen Werkzeug, inzwischen behoben:** Die Route-Regel in
+`ae-item.js` brach alle `_____tmd_____`-Requests ab, **auch die Hauptnavigation**. Damit
+blieb `p.url()` die Originaladresse, die BOT-SCHUTZ-Erkennung griff nicht, und die harte
+Sperre kam als leerer Datensatz zurück – ununterscheidbar von Drosselung. Die Regel gilt
+jetzt nur noch für Sub-Ressourcen (`isNavigationRequest()`-Ausnahme).
+
+**Und: ein direkter API-Weg existiert nicht.** Geprüft, nicht vermutet: beim
+Seitenaufbau trägt kein XHR die SKU-Daten, `window.runParams` ist leer, im HTML steht
+kein Preis-/SKU-Payload, und `aeglodetailweb/api/seo/seodata` funktioniert **ohne jede
+Sitzung**, enthält aber **keine Preise**. Die Variantenpreise gibt es nur über das
+Anklicken im DOM.
+
 ---
 
 ## 3 · Die wichtigste Erkenntnis: der Neukunden-Deal verfälscht alle Preise
@@ -82,6 +143,21 @@ Zustellung 27.–30. September** – die erste bestätigte Versandangabe überha
 ---
 
 ## 4 · Deine Aufgaben
+
+> ### Stand 18.09.2026, abends
+>
+> | # | Aufgabe | Status |
+> |---|---|---|
+> | 4.1 | Board + Breakout beim selben Verkäufer | ✅ **Shop1104003965**, ≈ CHF 47 für 10+10 |
+> | 4.2 | Regulärpreise nachtragen | ✅ alle 7 |
+> | 4.3 | Versandkosten | ✅ Gratis ist die Regel, 3 Ausnahmen, zusammen CHF 13 |
+> | 4.4 | Variantenpreise | 🟡 4 von 5 – Relaismodul offen |
+> | 4.5 | Gruppe B bündeln | 🟡 TZT deckt ≥ 15/28; 7 Positionen ungeprüft |
+> | 4.6 | Datei, Commit, Push | ✅ Commit `121825b` |
+>
+> Die offenen Restpunkte stehen als Tabelle in `11-einkaufsliste-final.md` unter
+> «Offene Punkte», damit sie beim Bestellen nicht untergehen. Die Abschnitte unten
+> bleiben stehen, weil die Begründungen dort weiter gelten.
 
 ### 4.1 · Boards und Breakouts beim selben Verkäufer — Maxims Hauptanliegen
 
