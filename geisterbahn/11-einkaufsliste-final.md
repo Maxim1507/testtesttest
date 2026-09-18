@@ -6,8 +6,8 @@ Lieferland Schweiz, sortiert nach Bestellungen).
 
 | | CHF |
 |---|---|
-| AliExpress (Ware, inkl. Breakouts) | **≈ 213** |
-| Versandkosten AliExpress | nicht auslesbar, ≈ 0–30 |
+| AliExpress (Ware, inkl. Breakouts) | **≈ 214** |
+| Versandkosten AliExpress | grösstenteils offen, ≈ 0–30 |
 | Baumarkt | ≈ 40 |
 | Netzteile, SD-Karten | **0** – vorhanden |
 | **Total** | **≈ 253–283** |
@@ -49,10 +49,10 @@ Warenwerts, und es gibt viele Händler, die das komplett führen.
 3. Nutze die **Suche innerhalb des Shops** für die übrigen Positionen der Gruppe.
 4. Was der Shop nicht führt, nimmst du aus der Liste unten beim verlinkten Anbieter.
 
-> **Ich kann diesen Schritt nicht für dich machen.** Verkäufer- und Shop-Seiten
-> liegen bei AliExpress hinter demselben Bot-Schutz wie die Produktseiten – ich sehe
-> nur die Trefferlisten. Deshalb ist unten pro Position der beste Einzelanbieter
-> verlinkt, und das Bündeln machst du im letzten Schritt.
+> **Diesen Schritt übernimmt die lokale Session** (`HANDOVER-LOKAL.md`). Aus der
+> Cloud waren Produktseiten gesperrt; Verkäuferseiten dagegen offenbar **nicht** –
+> das wurde erst am Schluss entdeckt und nicht mehr zu Ende geprüft. Bis dahin ist
+> unten pro Position der beste Einzelanbieter verlinkt.
 
 > **Der Kompromiss:** Ein Bündel-Händler ist selten bei jeder einzelnen Position
 > der billigste. Rechne mit CHF 10–20 Aufpreis auf die Ware – und spare dafür
@@ -66,7 +66,7 @@ Warenwerts, und es gibt viele Händler, die das komplett führen.
 | Markierung | Bedeutung |
 |---|---|
 | **bestätigt** | Preis stand am 18.09.2026 so auf der AliExpress-Trefferliste, in CHF, Lieferland Schweiz. |
-| **≈ Neukunden-Deal** | AliExpress zeigt meiner Session (ohne Bestellhistorie) den Willkommenspreis **CHF 0.92**. Das ist kein echter Preis. Angegeben ist der durchgestrichene Originalpreis – das ist die **Obergrenze**, dein echter Preis liegt darunter. |
+| **≈ Neukunden-Deal** | AliExpress zeigt Konten ohne Bestellhistorie den Willkommenspreis **CHF 0.92**, **limitiert auf 1 Stück pro Kunde**. Das ist kein echter Preis. Angegeben ist der durchgestrichene Originalpreis – das ist die **Obergrenze**, der echte Preis liegt darunter. **Diese Positionen müssen noch verifiziert werden**, siehe `HANDOVER-LOKAL.md`. |
 | **Versand** | **Nicht ermittelbar** (Bot-Schutz, siehe «Offene Punkte»). Bei vielen Angeboten stand «Kostenloser Versand ab CHF 9» – bei gebündelten Bestellungen dürfte das meist greifen. |
 
 > **Varianten-Dropdowns prüfen.** Alle Preise gelten für die Standardvariante der
@@ -79,7 +79,7 @@ Warenwerts, und es gibt viele Händler, die das komplett führen.
 
 | Menge | Artikel | CHF/Stk | Total | Angebot |
 |---|---|---|---|---|
-| 10 | ESP32 DevKit ⚠️ **38 Pin, ESP-WROOM-32** | 1.80 **bestätigt** · 4.8★ · 1000+ | 18.00 | [ESP-WROOM-32 DevKitC 38PINS](https://de.aliexpress.com/item/1005007059778300.html) |
+| 10 | ESP32 DevKit ⚠️ **38 Pin, ESP-WROOM-32** | **1.91 bestätigt** (Regulärpreis) · 4.8★ · 1000+ · **Versand gratis** | 19.10 | [ESP-WROOM-32 DevKitC 38PINS](https://de.aliexpress.com/item/1005007059778300.html) – Realpoy Module Wholesale Store |
 | | *Sicherere Alternative, mehr Verkäufe* | 4.17 **bestätigt** · 4.8★ · 4000+ | 41.70 | [ESP-32 30/38-Pin CP2102](https://de.aliexpress.com/item/1005006220389074.html) |
 | 10 | Schraubklemmen-Breakout (38 Pin) | 2.83 *≈ Neukunden-Deal* · 4.8★ · 900+ | ≈ 28.30 | [ESP-32S 38pin Anschluss-Schraube-Board](https://de.aliexpress.com/item/1005006026098254.html) |
 
@@ -224,7 +224,7 @@ Warenwerts, und es gibt viele Händler, die das komplett führen.
 > eigener Versand kaum – notfalls streichen und stattdessen normale Drucktaster
 > aus Gruppe B nehmen.
 
-**AliExpress Ware total ≈ CHF 213**
+**AliExpress Ware total ≈ CHF 214** – Stand vor der Verifikation der Neukunden-Deal-Preise, die noch aussteht (`HANDOVER-LOKAL.md`)
 
 ---
 
@@ -326,7 +326,8 @@ Wenn nein → SwitchBot Bot, CHF 20.90, per Bluetooth direkt vom Pi.
 | Domain | Status |
 |---|---|
 | `de.aliexpress.com` – **Trefferlisten** | ✅ funktioniert, Preise in CHF, Lieferland CH |
-| `de.aliexpress.com` – **Produkt- und Shop-Seiten** | ❌ Bot-Schutz, Weiterleitung auf `/_____tmd_____/punish` |
+| `de.aliexpress.com` – **Produktseiten** | ❌ Bot-Schutz, Weiterleitung auf `/_____tmd_____/punish` |
+| `de.aliexpress.com` – **Verkäuferseiten** `/store/<id>` | ⚠️ kein Bot-Schutz, Seite lädt – Produktliste wird aber per JS nachgeladen und war beim ersten Versuch noch nicht da. Ungetestet. |
 | `ae01.alicdn.com` | ✅ Bilder-CDN |
 | `www.bastelgarage.ch` | ✅ vollständig, servergerendert |
 | `www.berrybase.ch` | ✅ vollständig |
