@@ -148,12 +148,18 @@ Zustellung 27.–30. September** – die erste bestätigte Versandangabe überha
 >
 > | # | Aufgabe | Status |
 > |---|---|---|
-> | 4.1 | Board + Breakout beim selben Verkäufer | ✅ **Shop1104003965**, ≈ CHF 47 für 10+10 |
+> | 4.1 | Board + Breakout beim selben Verkäufer | ✅ **Simple Robot Store**, CHF 57.60 für 10+10 |
 > | 4.2 | Regulärpreise nachtragen | ✅ alle 7 |
-> | 4.3 | Versandkosten | ✅ Gratis ist die Regel, 3 Ausnahmen, zusammen CHF 13 |
-> | 4.4 | Variantenpreise | 🟡 4 von 5 – Relaismodul offen |
+> | 4.3 | Versandkosten | ✅ Gratis ist die Regel, 2 Ausnahmen, zusammen CHF 12 |
+> | 4.4 | Variantenpreise | ✅ alle 5, plus Elko und UV |
 > | 4.5 | Gruppe B bündeln | 🟡 TZT deckt ≥ 15/28; 7 Positionen ungeprüft |
-> | 4.6 | Datei, Commit, Push | ✅ Commit `121825b` |
+> | 4.6 | Datei, Commit, Push | ✅ |
+>
+> **Neues Total: CHF 264 Ware + 12 Versand + 40 Baumarkt ≈ 316.** Der Anstieg
+> gegenüber den ersten ≈ 214 hat vier Ursachen: die billigen ESP32-Kombinationen
+> waren **30-Pin-Boards** (passen nicht), der WS2812B-Listenpreis war die
+> **1-m-Variante**, die billigen UV-Strips lassen **Wellenlänge oder Spannung nicht
+> wählen**, und der Relais-Listenpreis galt für «1 Channel 24V».
 >
 > Die offenen Restpunkte stehen als Tabelle in `11-einkaufsliste-final.md` unter
 > «Offene Punkte», damit sie beim Bestellen nicht untergehen. Die Abschnitte unten

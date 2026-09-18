@@ -7,20 +7,24 @@ inklusive Variante, Versand und Lagerbestand. Der Rest kommt aus der Trefferlist
 
 | | CHF |
 |---|---|
-| AliExpress (Ware, inkl. Breakouts) | **≈ 234** |
-| Versandkosten AliExpress | **≈ 13** – ermittelt, nur 3 Positionen kosten überhaupt Versand |
+| AliExpress (Ware, inkl. Breakouts) | **264** |
+| Versandkosten AliExpress | **12** – nur 2 Positionen kosten Versand |
 | Baumarkt | ≈ 40 |
 | Netzteile, SD-Karten | **0** – vorhanden |
-| **Total** | **≈ 287** |
+| **Total** | **≈ 316** |
 
-> **Rund CHF 90 weniger als die bisherige Schätzung von CHF 379.**
-> Die alte Liste war durchgehend zu pessimistisch kalkuliert.
+> **Noch CHF 63 unter der alten Schätzung von CHF 379** – aber die erste Fassung
+> dieser Liste (≈ 214 + offener Versand) war zu optimistisch. Alle Preise sind
+> jetzt Regulärpreise von der Produktseite, mit der richtigen Variante.
 
-> **Änderung gegenüber dem ersten Stand (≈ 214 + offener Versand):** die sieben
-> Positionen mit Neukunden-Deal-Preis sind jetzt auf Regulärpreise korrigiert und
-> die Versandkosten sind ermittelt. Der grösste Sprung: **WS2812B kostet 18.56
-> statt 11.42 pro 5-m-Rolle** (der alte Wert war die 1-m-Variante) und der
-> UV-Strip ist teurer als gedacht – Gruppe C geht von 29 auf 52.
+**Was zwischen 214 und 264 passiert ist** – vier Positionen, nichts davon vermeidbar:
+
+| | alt | neu | warum |
+|---|---|---|---|
+| ESP32 + Breakout | 47 | **58** | Die billigen Kombinationen waren **30-Pin-Boards**. Ein Verkäufer mit echtem 38-Pin-Board *und* passendem Breakout kostet mehr. |
+| WS2812B, 2 Rollen | 22.84 | **37.12** | Der alte Preis war die **1-m-Variante**, nicht 5 m. |
+| UV-Strip, 2 Rollen | 16.13 | **27.30** | Die billigen Angebote lassen **Wellenlänge oder Spannung nicht wählen**. |
+| Relais | 11.10 | **17.76** | Der alte Preis galt für «1 Channel 24V», nicht für 8- und 2-Kanal in 5 V. |
 
 ---
 
@@ -31,16 +35,21 @@ Warenkorb. Die Zahl der Pakete bestimmst du also nicht durch die Aufteilung der
 Liste, sondern dadurch, bei wie vielen verschiedenen Verkäufern du bestellst.
 
 Die alte Aufteilung in 9 thematische Pakete kam von der **Zollgrenze CHF 62**.
-Bei einem Warenwert von CHF 213 ist die kein Thema mehr – selbst alles in einer
-Sendung bliebe darunter. Die Themen-Pakete haben damit keinen Zweck mehr.
+Die Begründung dafür war falsch – bei CHF 264 Warenwert liegen die Gruppen B (115)
+und C (64) klar *über* der Grenze, nicht darunter. Der Punkt ist ein anderer:
+**AliExpress erhebt die Schweizer MwSt. bereits an der Kasse** – die Produktseiten
+weisen «Preis inkl. MwSt.» aus. Damit fällt an der Grenze keine Einfuhrsteuer und
+keine Verzollungsgebühr der Post an, und die Paketgrösse ist steuerlich irrelevant.
+Die Themen-Pakete haben also tatsächlich keinen Zweck mehr, nur aus einem anderen
+Grund als bisher notiert.
 
 Die Liste ist jetzt nach **Verfügbarkeit** gruppiert statt nach Thema:
 
 | | Gruppe | ≈ CHF | Warum eigener Verkäufer |
 |---|---|---|---|
-| **A** | ESP32-Boards + Breakouts | 47 | ESP-Spezialisten; Board und Breakout müssen zueinander passen |
-| **B** | Alles Allgemeine: Sensoren, Module, Treiber, Servos, Ton, Relais, Verbrauchsmaterial | 108 | führt **jeder** grössere Elektronik-Händler |
-| **C** | LED-Strips (WS2812B, UV) | 52 | LED-Händler, Meterware |
+| **A** | ESP32-Boards + Breakouts | 58 | ESP-Spezialisten; Board und Breakout müssen zueinander passen |
+| **B** | Alles Allgemeine: Sensoren, Module, Treiber, Servos, Ton, Relais, Verbrauchsmaterial | 115 | führt **jeder** grössere Elektronik-Händler |
+| **C** | LED-Strips (WS2812B, UV) | 64 | LED-Händler, Meterware |
 | **D** | Motoren + Magnete | 18 | Motoren-/Magnet-Händler (z. B. Bringsmart) |
 | | *Arcade-Taster* | 9 | Arcade-Teile; meist eigener Shop → sonst 5. Paket |
 
@@ -92,13 +101,31 @@ Warenwerts, und es gibt viele Händler, die das komplett führen.
 
 ---
 
-## 🇨🇳 Gruppe A · ESP32 — ≈ CHF 47
+## 🇨🇳 Gruppe A · ESP32 — ≈ CHF 58
+
+**Beides bei Simple Robot Store — ein Verkäufer, ein Paket, Gratisversand.**
 
 | Menge | Artikel | CHF/Stk | Total | Angebot |
 |---|---|---|---|---|
-| 10 | ESP32 DevKit ⚠️ **38 Pin, ESP-WROOM-32** | **1.91 bestätigt** (Regulärpreis) · 4.8★ · 1000+ · **Versand gratis** | 19.10 | [ESP-WROOM-32 DevKitC 38PINS](https://de.aliexpress.com/item/1005007059778300.html) – Realpoy Module Wholesale Store |
-| | *Sicherere Alternative, mehr Verkäufe* | 4.17 **bestätigt** · 4.8★ · 4000+ | 41.70 | [ESP-32 30/38-Pin CP2102](https://de.aliexpress.com/item/1005006220389074.html) |
-| 10 | Schraubklemmen-Breakout (38 Pin) | 2.83 **bestätigt** · Versand gratis · 4.8★ · 900+ | 28.30 | [ESP-32S 38pin Anschluss-Schraube-Board](https://de.aliexpress.com/item/1005006026098254.html) – Ziqqucu |
+| 10 | ESP32 DevKit ⚠️ Variante **`TYPE-C-CP2102-38PIN`** | **3.56 bestätigt** · Versand gratis, Sep 25–30 · 4.7★ · 10 000+ | 35.60 | [ESP32-DevKitC-32 ESP-WROOM](https://de.aliexpress.com/item/1005004476867346.html) – Simple Robot Store |
+| 10 | Schraubklemmen-Breakout, **38-Pin Schmalversion** | **2.20 bestätigt** · Versand gratis, Sep 25–30 · 4.8★ · 900+ | 22.00 | [Breakout GPIO 1 zu 2, 38-PIN](https://de.aliexpress.com/item/1005004478557343.html) – Simple Robot Store |
+
+Bildkontrolle 18.09.2026: der Breakout ist grün, hat **Schraubklemmen an beiden
+Längsseiten** und den Aufdruck «TERMINAL ADAPTER» — das ist der richtige Typ. Der
+Verkäufer führt denselben Adapter zusätzlich als Variante `Adapter 38P` im
+Board-Angebot (2.42), also teurer als das Einzelangebot — nimm das Einzelangebot.
+
+**Die billigere Alternative, die du nicht nehmen solltest:**
+
+| Menge | Artikel | CHF/Stk | Total | Angebot |
+|---|---|---|---|---|
+| 10 | ESP32 DevKit 38 Pin | 1.91 **bestätigt** · Versand gratis · 4.8★ · 1000+ | 19.10 | [ESP-WROOM-32 DevKitC 38PINS](https://de.aliexpress.com/item/1005007059778300.html) – Realpoy |
+| 10 | Schraubklemmen-Breakout 38 Pin | 2.83 **bestätigt** · Versand gratis · 4.8★ · 900+ | 28.30 | [ESP-32S 38pin Schraube-Board](https://de.aliexpress.com/item/1005006026098254.html) – Ziqqucu |
+
+Das wären **CHF 47.40 statt 57.60**, also CHF 10 günstiger. Dafür zwei Verkäufer,
+zwei Pakete — und, das ist der eigentliche Punkt, **niemand garantiert, dass
+Realpoys Board auf Ziqqucus Breakout passt.** Genau diese Unsicherheit wolltest du
+weghaben. CHF 10 für Passgarantie und ein Paket weniger ist der bessere Tausch.
 
 > **Der Schraubklemmen-Breakout heisst auf AliExpress «GPIO 1 in 2» oder «1 zu 2»** –
 > nicht «screw terminal». Deshalb war er über neun Suchen hinweg unauffindbar.
@@ -108,28 +135,17 @@ Warenwerts, und es gibt viele Händler, die das komplett führen.
 > das Board nicht auf dem Breakout. Beim selben Verkäufer passt es garantiert – und
 > es ist ohnehin ein Paket weniger.
 
-### Ein Verkäufer für Board **und** Breakout — geprüft 18.09.2026
+### Warum die anderen Kandidaten ausfallen — geprüft 18.09.2026
 
-Drei Händler führen beides. Alle Preise sind Regulärpreise von der Produktseite.
+| Verkäufer | Warum nicht |
+|---|---|
+| **Realpoy** | Führt beides und wäre der billigste Weg, aber der passende Breakout [1005007059651484](https://de.aliexpress.com/item/1005007059651484.html) hat **nur 3 Stück** auf Lager. Realpoys Alternative [1005007059482676](https://de.aliexpress.com/item/1005007059482676.html) ist per Bildkontrolle ein **Stiftleisten-Board ohne Schraubklemmen** – nicht bestellen. |
+| **Shop1104003965** | Das billige Board [1005008981904299](https://de.aliexpress.com/item/1005008981904299.html) (1.84) hat **ausschliesslich 30P-Varianten**, kein 38-Pin – passt nicht auf das Breakout. Das zweite Board [1005008806241325](https://de.aliexpress.com/item/1005008806241325.html) kostet regulär 2.63 (nicht 2.15) und nennt in den Varianten ebenfalls nur «30PIN». Damit ist der Shop erledigt. |
+| **Ziqqucu** | Führt nur Breakouts, keine Boards. |
 
-| Verkäufer | Board | Breakout | 10 + 10 |
-|---|---|---|---|
-| **Shop1104003965** | [1005008981904299](https://de.aliexpress.com/item/1005008981904299.html) 1.84 (1000+) · [1005008806241325](https://de.aliexpress.com/item/1005008806241325.html) 2.15 (800+) | [1005008806055319](https://de.aliexpress.com/item/1005008806055319.html) 2.54 «38PIN schmale Version» (700+) | **≈ 44–47** |
-| **Simple Robot Store** | [1005004476867346](https://de.aliexpress.com/item/1005004476867346.html) 3.42 (10 000+) | [1005004478557343](https://de.aliexpress.com/item/1005004478557343.html) 2.21 «38-PIN Schmalversion» (900+) | ≈ 56 |
-| Realpoy (Board oben) | 1005007059778300 · 1.91 | [1005007059651484](https://de.aliexpress.com/item/1005007059651484.html) 2.30 – ⚠️ **nur 3 auf Lager** | ✗ |
+Das ist auch der Grund, warum es teurer wurde als in der ersten Fassung gedacht:
+die günstigen Kombinationen waren **30-Pin-Boards**, und die passen nicht.
 
-⚠️ **Realpoy scheitert am Lagerbestand**, obwohl es der billigste Weg wäre: der
-passende Schraubklemmen-Breakout (per Screenshot verifiziert: grüne Platine,
-Schraubklemmen beidseitig, «TERMINAL ADAPTER») hat nur **3 Stück**. Realpoys
-Alternative [1005007059482676](https://de.aliexpress.com/item/1005007059482676.html)
-(CHF 1.94) ist per Screenshot als **Stiftleisten-Board ohne Schraubklemmen**
-entlarvt – nicht bestellen.
-
-**Empfehlung: Shop1104003965.** Billigste Kombination und beide Artikel auf Lager.
-Noch zu prüfen: der Preis 1.84 gilt für die Standardvariante «Expansion Board 30P» –
-**die 38P-Variante muss beim Bestellen explizit gewählt werden**, ihr Preis ist
-noch nicht bestätigt. Das zweite Board (2.15) ist bereits 38-Pin.
->
 > Teurere Alternative mit Status-LEDs und mehreren 5-V-/3,3-V-Abgriffen:
 > [Freenove Terminal Block Shield, CHF 16.76](https://de.aliexpress.com/item/1005005879655901.html)
 > – für 10 Stationen mit CHF 168 zu teuer, aber gut für die eine Station, an der du
@@ -140,7 +156,7 @@ noch nicht bestätigt. Das zweite Board (2.15) ist bereits 38-Pin.
 
 ---
 
-## 🇨🇳 Gruppe B · Allgemeine Elektronik — ≈ CHF 108
+## 🇨🇳 Gruppe B · Allgemeine Elektronik — ≈ CHF 115
 
 **Das Bündel-Paket.** 20 Positionen, die jeder grössere Elektronik-Händler führt.
 
@@ -183,50 +199,75 @@ noch nicht bestätigt. Das zweite Board (2.15) ist bereits 38-Pin.
 | 5 | Lautsprecher 3 W / 8 Ω im Gehäuse | 1.12 **bestätigt** · 4.7★ · 2000+ | 5.60 | [3525/2030 Hohlraumlautsprecher](https://de.aliexpress.com/item/1005007640238935.html) |
 | 3 | PAM8403 Verstärker | 0.90 **bestätigt** · 4.9★ · 2000+ | 2.70 | [PAM8403 2×3 W](https://de.aliexpress.com/item/1005008554786164.html) |
 
-### B5 · 12-V-Licht & Relais — ≈ CHF 18
+### B5 · 12-V-Licht & Relais — ≈ CHF 24
 
 | Menge | Artikel | CHF/Stk | Total | Angebot |
 |---|---|---|---|---|
 | 10 | 12-V-COB-LED-Modul | 5.49 / 10 Stk **bestätigt** · Versand gratis · 4.9★ · 10 000+ | 5.49 | [12 V COB-LED-Module, 10 Stk, IP65](https://de.aliexpress.com/item/1005008406091646.html) |
 | 1 | Stroboskop 12 V LED | 1.19 **bestätigt** · 4.7★ · 3000+ | 1.19 | [12-LED-Stroboskop 12–24 V](https://de.aliexpress.com/item/1005008034979845.html) |
-| 1 | Relaismodul 8-Kanal ⚠️ **5 V + Optokoppler** | ≈ 4–5 **Variante wählen** · 4.7★ · 4000+ | ≈ 4.50 | [1/2/4/6/8-Kanal Relais 5 V Optokoppler](https://de.aliexpress.com/item/1005006280813881.html) |
-| 5 | Relaismodul 2-Kanal 5 V | 1.32 **bestätigt** · 4.7★ · 4000+ | 6.60 | *dasselbe Angebot, Variante «2 Kanal 5V»* |
+| 1 | Relaismodul 8-Kanal ⚠️ Variante **`8 Channel 5V`** | **6.26 bestätigt** · Versand gratis, Sep 27–Okt 02 · 4.7★ · 4000+ | 6.26 | [1/2/4/6/8-Kanal Relais 5 V Optokoppler](https://de.aliexpress.com/item/1005006280813881.html) – YouKeyi Store |
+| 5 | Relaismodul 2-Kanal ⚠️ Variante **`2 Channel 5V`** | **2.30 bestätigt** · Versand gratis · 4.7★ · 4000+ | 11.50 | *dasselbe Angebot* |
 
-### B6 · Verbrauchsmaterial — ≈ CHF 8
+> ⚠️ **Relais: teurer als angesetzt.** Die Variantenpreise sind CHF 6.26 für
+> 8-Kanal (statt geschätzt 4.50) und **2.30 für 2-Kanal statt 1.32** – der alte Wert
+> kam aus der Trefferliste und galt für die Standardvariante «1 Channel 24V»
+> (1.56). Alle Varianten, bestätigt am 18.09.2026: 2-Kanal 2.30 · 4-Kanal 3.54 ·
+> 8-Kanal 6.26, jeweils 5 V, Gratisversand.
+>
+> *Sparoption, falls es dir passt:* Zwei 4-Kanal-Module (2 × 3.54 = 7.08) statt
+> fünf 2-Kanal-Modulen (11.50) sind CHF 4.40 billiger. Dafür sitzen die Relais
+> nicht mehr bei der Station, sondern zentral – mehr 12-V-Kabel. Dein Entscheid;
+> die Liste rechnet mit den fünf einzelnen.
+
+### B6 · Verbrauchsmaterial — ≈ CHF 10
 
 | Menge | Artikel | CHF | Angebot |
 |---|---|---|---|
 | 100 | 1N4007 Dioden ⚠️ **Freilauf an jede Spule – Pflicht** | 1.47 **bestätigt** · 4.9★ · 3000+ | [100 Stk 1N4007 1 A 1000 V DO-41](https://de.aliexpress.com/item/1005006454795578.html) |
-| 10 | Elko 1000 µF / 16 V (an jeden LED-Strip-Anfang) | 1.87 **bestätigt**, **Staffel: 0.96 ab 10 Stk** · Versand gratis · 4.9★ | [Elektrolytkondensatoren, Wert wählen](https://de.aliexpress.com/item/1005005691916127.html) |
+| 10 | Elko 1000 µF / 16 V (an jeden LED-Strip-Anfang) ⚠️ Variante **`16V1000UF-10PCS`** | **2.33 bestätigt** für das 10er-Pack · Versand gratis, Sep 27–Okt 02 · 4.9★ | [Elektrolytkondensatoren, Wert wählen](https://de.aliexpress.com/item/1005005691916127.html) – IBUW |
 | 600 | Widerstandssortiment ¼ W, 1 %, 30 Werte | 2.97 **bestätigt** · Versand gratis · 4.9★ · 2000+ | [600 Stk Metallfilm-Widerstandsset](https://de.aliexpress.com/item/1005006179281226.html) |
 | 120 | Dupont-Kabel-Set (M-M, M-F, F-F) | 2.92 **bestätigt** · Versand gratis · 4.9★ · 3000+ | [Dupont 40–120 Stk, 10/20/30 cm](https://de.aliexpress.com/item/1005005364298980.html) |
 
+> **Elko: 2.33, nicht 1.87.** Der alte Wert galt für die Standardvariante
+> «25V 330 µF». Die richtige Variante `16V1000UF-10PCS` kostet 2.33 pro **10er-Pack**
+> – ein Pack reicht für alle 10 Strip-Anfänge. Staffel bei diesem Wert: 1.35 ab 3
+> Packs, 1.28 ab 5, 1.21 ab 10 – für dich irrelevant, du brauchst eines.
+
 ---
 
-## 🇨🇳 Gruppe C · LED-Strips — ≈ CHF 52
+## 🇨🇳 Gruppe C · LED-Strips — ≈ CHF 64
 
 | Menge | Artikel | CHF/Stk | Total | Angebot |
 |---|---|---|---|---|
 | 2 | WS2812B 5 m, 30 LED/m, ⚠️ **5 V, IP30** | **18.56 bestätigt** für Variante «Black PCB IP30 / 30LEDs-M / 5m» · Versand gratis · 4.8★ · 5000+ | 37.12 | [WS2812B 5 V 30/60/144 LED, 1–5 m](https://de.aliexpress.com/item/1005009580843710.html) |
-| 2 | UV-LED-Strip 5 m, 395 nm, ⚠️ **12 V** | 14.96 **bestätigt** für «5m EU Plug» · ⚠️ **nur 1 Stk auf Lager** · 4.5★ | — | [UV-Strip 5 M DC12V 385–400 nm](https://de.aliexpress.com/item/1005009512141454.html) |
-| 2 | *Alternative UV* | 7.28 **bestätigt** für «White PCB / IP20 / 60LEDs-M» · Versand CHF 1.57 · ⚠️ **Wellenlänge nicht wählbar** · 5.0★ | 14.56 + 1.57 | [5 m 12 V UV 365/395 nm IP20/IP65](https://de.aliexpress.com/item/2037523901.html) |
+| 2 | UV-LED-Strip 5 m, **395–405 nm, 12 V** ⚠️ Variante **`5M 12V 5050 60leds`** | **13.65 bestätigt** · Versand gratis, Sep 27–Okt 05 · 4.9★ | 27.30 | [UV 395–405 nm, 5 V/12 V, 60/120 LED/m](https://de.aliexpress.com/item/1005005812239262.html) – Dream Lighting Store |
 
 > ⚠️ **WS2812B: 18.56, nicht 11.42.** Der Listenpreis war der der 1-m-Variante.
 > Bestätigt am 18.09.2026 durch Anklicken der Variante auf der Produktseite.
 > Die **weisse Platine ist in 5 m ausverkauft**, ebenso 144 LED/m in 5 m – schwarze
 > Platine nehmen, in einer Geisterbahn ohnehin besser, weil sie nicht spiegelt.
 
-> ⚠️ **UV-Strip: beide Angebote haben einen Haken.** Das erste hat nur noch
-> **1 Stück** auf Lager (du brauchst 2) und enthält ein Steckernetzteil, das du
-> nicht brauchst. Beim zweiten lässt sich die **Wellenlänge nicht wählen** – der
-> Titel nennt 365 nm *und* 395 nm, es gibt aber nur Varianten für Platinenfarbe,
-> IP-Klasse und LED-Dichte. 365 nm leuchtet kaum sichtbar und bringt für
-> Schwarzlicht-Effekte nichts. **Vor dem Kauf beim Verkäufer nachfragen** oder eines
-> der Angebote unten nehmen, die 395–405 nm im Titel führen:
-> [33032788373](https://de.aliexpress.com/item/33032788373.html) (Gratisversand, 4.4★),
-> [1005005812239262](https://de.aliexpress.com/item/1005005812239262.html) (Gratisversand, 4.9★),
-> [33025833609](https://de.aliexpress.com/item/33025833609.html) (5.0★).
-> Diese drei sind noch nicht auf Variantenpreise geprüft.
+> ✅ **UV-Strip: gelöst, aber teurer.** Die beiden alten Kandidaten hatten je einen
+> Haken – [1005009512141454](https://de.aliexpress.com/item/1005009512141454.html)
+> hat **nur 1 Stück** auf Lager (du brauchst 2) und ein unnötiges Steckernetzteil,
+> und bei [2037523901](https://de.aliexpress.com/item/2037523901.html) (7.28) liess
+> sich die **Wellenlänge nicht wählen**: der Titel nennt 365 nm *und* 395 nm, die
+> Varianten nur Platinenfarbe, IP-Klasse und LED-Dichte. 365 nm leuchtet kaum
+> sichtbar und bringt für Schwarzlicht nichts.
+>
+> Das eingetragene Angebot löst beides: der Titel nennt **395–405 nm**, und
+> **Spannung und Länge sind explizit wählbar** – Variante `5M 12V 5050 60leds`,
+> bestätigt CHF 13.65, Gratisversand, 4.9★. Das kostet CHF 27.30 für zwei Rollen
+> statt 14.56 + 1.57, also gut CHF 11 mehr. Dafür weisst du, was du bekommst.
+>
+> *Billigere Option mit Restrisiko:*
+> [33025833609](https://de.aliexpress.com/item/33025833609.html) (Seven Bears, 5.0★)
+> kostet in «60 LEDs / IP20 / 5 m» nur **CHF 7.10 bestätigt**, Gratisversand – aber
+> dort ist die **Spannung keine Variante**, es gibt nur LED-Dichte, IP-Klasse und
+> Länge. Ob du 12 V bekommst, ist damit nicht abgesichert. Wenn du CHF 13 sparen
+> willst: vorher beim Verkäufer nachfragen.
+> [33032788373](https://de.aliexpress.com/item/33032788373.html) war wegen der
+> AliExpress-Sperre nicht auslesbar.
 
 > Viele LED-Händler führen WS2812B **und** UV – prüf beim Bestellen, ob dein
 > WS2812B-Verkäufer auch den UV-Strip hat. Dann wird aus C ein einziges Paket.
@@ -277,11 +318,12 @@ noch nicht bestätigt. Das zweite Board (2.15) ist bereits 38-Pin.
 > eigener Versand kaum – notfalls streichen und stattdessen normale Drucktaster
 > aus Gruppe B nehmen.
 
-**AliExpress Ware total ≈ CHF 234 + CHF 13 Versand ≈ CHF 247**
+**AliExpress Ware total CHF 264 + CHF 12 Versand = CHF 276**
 
-Aufstellung: A 47 · B 108 · C 52 · D 18 · Arcade 9.
-Versand fällt nur bei drei Positionen an: E18-D80NK 5.94 · JGY-370 5.95 ·
-UV-Strip-Alternative 1.57. Alles andere ist gratis.
+Aufstellung: A 57.60 · B 115.10 · C 64.42 · D 17.73 · Arcade 9.00.
+Innerhalb B: B1 22.23 · B2 20.37 · B3 16.50 · B4 21.87 · B5 24.44 · B6 9.69.
+Versand fällt nur bei **zwei** Positionen an: E18-D80NK 5.94 und JGY-370 5.95.
+Alles andere ist gratis.
 
 ---
 
@@ -334,13 +376,19 @@ Bündelst du um, **ändert sich der Versand mit** – im Warenkorb gegenprüfen.
 
 ### 2 · Noch nicht auf Variantenpreise geprüft
 
-| Position | Was fehlt |
-|---|---|
-| Relaismodul 8-Kanal `1005006280813881` | Preis der Variante «8 Kanal 5V». Die Standardvariante zeigt 1.56 regulär. **Schau das bitte selbst in der App nach** – AliExpress hat diese IP am Abend des 18.09. gesperrt, und zwar auch für einen normalen Browser, nicht nur für das Skript. Schätzung ≈ 4–5. |
-| Board `1005008981904299` (Shop1104003965) | Preis der 38P-Variante; 1.84 gilt für «Expansion Board 30P». |
-| UV-Alternativen `33032788373`, `1005005812239262`, `33025833609` | Variantenpreise und ob 395–405 nm wirklich wählbar ist. |
-| Elko `1005005691916127` | Der bestätigte Preis gilt für die Standardvariante «25V 330µF, 10 Stk». Für **1000 µF / 16 V** die Variante wählen und den Preis gegenprüfen; die Staffel **0.96 ab 10 Stück** greift dort vermutlich auch. |
-| 7 TZT-Positionen | SW-420, COB-LED, Stroboskop, Relais, 1N4007, Elko, Widerstandsset – ob TZT sie führt, ist wegen Netzwerkfehlern offen. Betrifft nur die Bündelung, nicht die Preise. |
+Alle Variantenpreise der Hauptpositionen sind geprüft. Es bleiben zwei Kleinigkeiten:
+
+| Position | Was fehlt | Auswirkung |
+|---|---|---|
+| UV-Alternative `33032788373` | Nicht auslesbar (AliExpress-Sperre). Nur relevant, wenn du beim UV-Strip noch sparen willst. | keine, Hauptangebot steht |
+| 7 TZT-Positionen | SW-420, COB-LED, Stroboskop, Relais, 1N4007, Elko, Widerstandsset – ob TZT sie führt, ist wegen Netzwerkfehlern offen. | betrifft nur die **Zahl der Pakete**, nicht die Preise |
+
+⚠️ **Ein echter Restpunkt bleibt die Platinenbreite.** Board und Breakout kommen beim
+empfohlenen Verkäufer aus demselben Shop, und der Breakout heisst ausdrücklich
+«38-PIN Schmalversion» – aber ob das Board die schmale oder die breite Bauform ist,
+steht nirgends. Aus dem Produktfoto lässt sich das nicht messen. Wenn du auf
+Nummer sicher gehen willst: **frag den Verkäufer vor dem Bestellen**, ob Board und
+Adapter zusammenpassen. Er verkauft beides, die Antwort kostet ihn nichts.
 
 ### 3 · Nebelmaschinen-Fernbedienung
 
@@ -352,17 +400,20 @@ Wenn nein → SwitchBot Bot, CHF 20.90, per Bluetooth direkt vom Pi.
 
 ## Vor dem Absenden prüfen
 
-1. **ESP32 DevKit: 38-Pin-Version.** Die 30-Pin-Boards passen nicht auf das Breakout.
-   Beide Varianten stecken oft im selben Angebot – Dropdown kontrollieren.
-   Zusätzlich auf die **Platinenbreite** achten (schmal vs. breit); Boards und
-   Breakouts beim selben Verkäufer bestellen.
-2. **UV-Strip: 12 V**, 395–400 nm, nicht 365 nm. Er hängt an der 12-V-Schiene.
-3. **WS2812B: 5 V**, wirklich WS2812B (nicht WS2811), IP30. Variante «5 m / 30 LED/m».
-4. **LDR-Modul: 4 Pins mit `D0` und Poti.** Nur der Digitalausgang umgeht den
+1. **ESP32 DevKit: Variante `TYPE-C-CP2102-38PIN`.** Die Standardvariante des
+   Angebots ist **30PIN** und passt nicht auf das Breakout – das ist die
+   wahrscheinlichste Fehlbestellung der ganzen Liste. Board und Breakout beim
+   selben Verkäufer bestellen.
+2. **UV-Strip: Variante `5M 12V 5050 60leds`.** Nicht die 5-V-Variante, nicht 1 m.
+3. **WS2812B: Variante «Black PCB IP30 / 30LEDs-M / 5m».** Wirklich WS2812B, nicht
+   WS2811. Weisse Platine ist in 5 m ausverkauft.
+4. **Relais: `8 Channel 5V` und `2 Channel 5V`.** Standard ist «1 Channel 24V».
+5. **Elko: `16V1000UF-10PCS`.** Standard ist «25V 330 µF».
+6. **IRF520: 10er-Pack**, nicht 5er.
+7. **JGY-370: 20 oder 30 U/min, 12 V.** Kostet gleich viel wie jede andere Drehzahl.
+8. **LDR-Modul: 4 Pins mit `D0` und Poti.** Nur der Digitalausgang umgeht den
    ADC2/WLAN-Konflikt des ESP32 (`10`).
-5. **Relais: 5 V Spulenspannung und Optokoppler**, nicht die 12-V-Variante.
-6. **JGY-370: langsame Ausführung, 20–40 U/min.**
-7. **Arcade-Taster: 12-V-Variante**, nicht 5 V.
+9. **Arcade-Taster: 12-V-Variante**, nicht 5 V.
 
 ---
 
@@ -373,7 +424,7 @@ Wenn nein → SwitchBot Bot, CHF 20.90, per Bluetooth direkt vom Pi.
 | 433-MHz-Handsender + Empfänger | Nicht gewünscht. Not-Aus steht im Node-RED-Dashboard auf dem Handy (`06`). |
 | JGY-370 Reservemotor | Stattdessen: Winde sofort nach Ankunft testen. |
 | Netzteile, MicroSD | Aus dem Bestand. |
-| Aufteilung in 9 Zoll-Pakete | Bei CHF 213 Warenwert gegenstandslos. Siehe oben. |
+| Aufteilung in 9 Zoll-Pakete | Bei CHF 264 Warenwert gegenstandslos – die Zollgrenze CHF 62 gilt pro Sendung und wird ohnehin überschritten. Siehe oben. |
 
 ---
 
