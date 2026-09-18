@@ -8,7 +8,7 @@ inklusive Variante, Versand und Lagerbestand. Der Rest kommt aus der Trefferlist
 | | CHF |
 |---|---|
 | AliExpress (Ware, inkl. Breakouts) | **264** |
-| Versandkosten AliExpress | **12** – nur 2 Positionen kosten Versand |
+| Versandkosten AliExpress | **12** – nur 2 von rund 20 Händlern verlangen Versand |
 | Baumarkt | ≈ 40 |
 | Netzteile, SD-Karten | **0** – vorhanden |
 | **Total** | **≈ 316** |
@@ -28,11 +28,21 @@ inklusive Variante, Versand und Lagerbestand. Der Rest kommt aus der Trefferlist
 
 ---
 
-## Warum jetzt 4 Bestellungen statt 9
+## Eine Bestellung — die Gruppen sind nur eine Leseordnung
 
-**Ein Paket = ein Verkäufer.** AliExpress versendet pro Verkäufer, nicht pro
-Warenkorb. Die Zahl der Pakete bestimmst du also nicht durch die Aufteilung der
-Liste, sondern dadurch, bei wie vielen verschiedenen Verkäufern du bestellst.
+**Du bestellst alles in einem Warenkorb.** AliExpress ist ein Marktplatz: ein
+Bezahlvorgang, beliebig viele Verkäufer. Die Gruppen A–D unten sind **keine
+Bestellungen** und keine Pakete, sondern nur eine Ordnung zum Lesen und Abhaken.
+
+**Was die Paketzahl bestimmt: ein Paket = ein Verkäufer.** Jeder Händler verschickt
+unabhängig aus seinem eigenen Lager. Diese Liste steht bei rund 20 verschiedenen
+Verkäufern, also rund 20 Pakete – daran ändert die Zahl der Bestellungen **nichts**.
+Weniger Pakete gibt es nur, indem man Positionen zu einem Händler umbucht, der sie
+auch führt. Wie weit das trägt: siehe «Ergebnis der Bündelungs-Prüfung».
+
+**Und es gibt keinen Grund, etwas zu splitten.** Weil jeder Händler unabhängig
+verschickt, kommt keine Position früher, wenn du sie separat bestellst. Eine
+Bestellung mit allem ist für jedes einzelne Teil genau so schnell wie 20 einzelne.
 
 Die alte Aufteilung in 9 thematische Pakete kam von der **Zollgrenze CHF 62**.
 Die Begründung dafür war falsch – bei CHF 264 Warenwert liegen die Gruppen B (115)
@@ -43,6 +53,14 @@ keine Verzollungsgebühr der Post an, und die Paketgrösse ist steuerlich irrele
 Die Themen-Pakete haben also tatsächlich keinen Zweck mehr, nur aus einem anderen
 Grund als bisher notiert.
 
+> **Nebenbei, weil die Frage aufkam: MwSt. fällt nicht «pro Artikeltyp und
+> Bestellung» an.** Sie ist ein Prozentsatz vom Warenwert – 8.1 % auf CHF 264 sind
+> CHF 21.40, ob das ein Artikel oder dreissig sind, ein Paket oder zwanzig.
+> Aufteilen ändert die Summe nicht. Was am Artikeltyp hängt, ist der **Satz**
+> (8.1 % normal, 2.6 % für Bücher und Lebensmittel) – für Elektronik durchgehend
+> 8.1 %. ⚠️ Grundlage ist die Angabe «Preis inkl. MwSt.» auf den Produktseiten,
+> **nicht** eine Auskunft des BAZG. Wenn es darauf ankommt, dort gegenprüfen.
+
 Die Liste ist jetzt nach **Verfügbarkeit** gruppiert statt nach Thema:
 
 | | Gruppe | ≈ CHF | Warum eigener Verkäufer |
@@ -51,26 +69,23 @@ Die Liste ist jetzt nach **Verfügbarkeit** gruppiert statt nach Thema:
 | **B** | Alles Allgemeine: Sensoren, Module, Treiber, Servos, Ton, Relais, Verbrauchsmaterial | 115 | führt **jeder** grössere Elektronik-Händler |
 | **C** | LED-Strips (WS2812B, UV) | 64 | LED-Händler, Meterware |
 | **D** | Motoren + Magnete | 18 | Motoren-/Magnet-Händler (z. B. Bringsmart) |
-| | *Arcade-Taster* | 9 | Arcade-Teile; meist eigener Shop → sonst 5. Paket |
+| | *Arcade-Taster* | 9 | Arcade-Teile; meist eigener Shop, TZT führt sie nicht |
 
-**Gruppe B ist der eigentliche Gewinn:** 20 Positionen, gut die Hälfte des
-Warenwerts, und es gibt viele Händler, die das komplett führen.
-
-### So bündelst du B selbst (5 Minuten in der App)
-
-1. Öffne aus Gruppe B das Angebot mit den meisten Verkäufen – den
-   [Relais-Händler](https://de.aliexpress.com/item/1005006280813881.html) (4000+)
-   oder den [LM2596-Händler](https://de.aliexpress.com/item/1005003516383470.html) (5000+).
-2. Tippe auf den **Shop-Namen** über dem Produkt.
-3. Nutze die **Suche innerhalb des Shops** für die übrigen Positionen der Gruppe.
-4. Was der Shop nicht führt, nimmst du aus der Liste unten beim verlinkten Anbieter.
+**Gruppe B ist die grösste Gruppe:** 20 Positionen, gut die Hälfte des Warenwerts,
+und viele Händler führen das komplett. Sie war deshalb der Kandidat fürs Zusammen-
+legen – geprüft, Ergebnis im nächsten Abschnitt.
 
 ### Ergebnis der Bündelungs-Prüfung (18.09.2026)
 
 **TZT 123 Official Store ist der Anker – aber B wird nicht ein Paket.**
 
-Drei Positionen der Liste kommen schon von TZT: **SW-420**, **PCF8574** und die
-**E18-D80NK**. Und TZT ist der einzige Händler in Gruppe B, der überhaupt Versand
+Belegt von TZT kommt die **E18-D80NK** (Verkäufername auf der Produktseite gelesen).
+Bei **SW-420** und **PCF8574** steht «TZT» nur im Produkttitel – das ist ein
+**Markenname, den viele Händler weiterverkaufen**, also kein Beweis für den Verkäufer.
+Die Prüfung beider Angebote lief in die AliExpress-Sperre. Im Warenkorb siehst du es
+ohnehin: AliExpress gruppiert dort nach Händler.
+
+TZT ist der einzige Händler in Gruppe B, der überhaupt Versand
 verlangt: **CHF 5.93**, bestätigt auf zwei Produktseiten. AliExpress rechnet Versand
 **pro Händler und Sendung** ab, nicht pro Artikel – die 5.93 sind also schon bezahlt,
 und **jede weitere TZT-Position fährt versandkostenfrei mit.** Das dreht die
@@ -353,9 +368,9 @@ die günstigen Kombinationen waren **30-Pin-Boards**, und die passen nicht.
 
 > Arcade-Teile kommen meist aus spezialisierten Shops. **Versuch zuerst, sie in
 > Gruppe B unterzubringen** – viele Elektronik-Händler führen auch beleuchtete
-> Drucktaster. Wenn nicht, ist das dein 5. Paket. Für CHF 9 Ware lohnt sich ein
-> eigener Versand kaum – notfalls streichen und stattdessen normale Drucktaster
-> aus Gruppe B nehmen.
+> Drucktaster. Wenn nicht, ist es ein Paket mehr. Der Versand ist hier gratis, es
+> geht also nur um die Sendung selbst – notfalls streichen und stattdessen normale
+> Drucktaster aus Gruppe B nehmen. **TZT führt sie nicht**, geprüft.
 
 **AliExpress Ware total CHF 264 + CHF 12 Versand = CHF 276**
 
@@ -364,9 +379,14 @@ Innerhalb B: B1 22.23 · B2 20.37 · B3 16.50 · B4 21.87 · B5 24.44 · B6 9.69
 Versand fällt nur bei **zwei** Händlern an: **TZT** 5.93 (bei der E18-D80NK
 eingerechnet) und der **JGY-370-Händler** 5.95. Alles andere ist gratis.
 
-> **Die TZT-5.93 gelten pro Sendung, nicht pro Artikel.** SW-420 und PCF8574 kommen
-> ebenfalls von TZT und fahren darin mit – deshalb steht bei ihnen kein Versand.
-> Legst du weitere TZT-Positionen dazu, ändert sich der Versand **nicht**.
+> **Die TZT-5.93 gelten pro Sendung, nicht pro Artikel** – auf der Produktseite stand
+> derselbe Betrag für 1, 2 und 5 Stück. Legst du weitere TZT-Positionen dazu, ändert
+> sich der Versand also nicht.
+>
+> ⚠️ **Garantiert ist das nicht.** Der Händler legt den Versand pro Artikel fest;
+> meist wird innerhalb eines Händlers zusammengefasst, bei schweren Teilen aber nicht
+> immer. **Im Warenkorb steht der Versand pro Händler aufgeschlüsselt** – dort
+> gegenprüfen, bevor du zahlst.
 
 ---
 
@@ -394,14 +414,25 @@ eingerechnet) und der **JGY-370-Händler** 5.95. Alles andere ist gratis.
 
 ---
 
-## Reihenfolge
+## Reihenfolge — es gibt keine
 
-1. **Gruppe D (Motoren & Magnete) zuerst.** Die Winde ist das einzige Teil ohne
-   Reserve und mit echtem Ausfallrisiko. Sofort nach Ankunft testen.
-2. **Gruppe A (ESP32) und B (Elektronik)** gleich hinterher – das ist der Grossteil.
-3. **Gruppe C (LED-Strips)** kann warten, Deko-Licht ist nicht kritisch.
-4. Gruppe B und A liessen sich im Notfall auch in der Schweiz nachkaufen
-   (Bastelgarage, BerryBase, ShopOfThings) – zu etwa dem Fünffachen.
+**Alles auf einmal bestellen.** Eine frühere Fassung dieser Datei riet, Gruppe D
+vorzuziehen. Das war ein Übrigbleibsel aus dem Plan mit 9 getrennten Paketen und ist
+falsch: **jeder Händler verschickt unabhängig.** Der JGY-Motor kommt, wenn *sein*
+Händler ihn verschickt – ob die ESP32-Boards im selben Warenkorb lagen, spielt keine
+Rolle. Eine Bestellung mit allem ist für jedes einzelne Teil genau so schnell wie
+eine separate. Vorziehen bringt nichts, Aufteilen kostet nur Übersicht.
+
+Was aus dem alten Abschnitt bleibt, ist **keine Bestellregel, sondern eine Notiz für
+den Tag der Ankunft:**
+
+- ⚠️ **Die Winde sofort nach Ankunft testen.** Sie ist das einzige Teil ohne Reserve
+  und mit echtem Ausfallrisiko. Je früher der Fehler auffällt, desto mehr Zeit bleibt
+  zum Nachbestellen – und das ist der Grund, weshalb alles **jetzt** raus soll, nicht
+  gestaffelt.
+- **Notfall-Rückfall:** Gruppe A und B gibt es auch in der Schweiz (Bastelgarage,
+  BerryBase, ShopOfThings) – zu etwa dem Fünffachen, aber in Tagen statt Wochen.
+- **Gruppe C (LED-Strips) ist unkritisch.** Kommt sie spät, fehlt nur Deko-Licht.
 
 ---
 
@@ -458,6 +489,10 @@ Wenn nein → SwitchBot Bot, CHF 20.90, per Bluetooth direkt vom Pi.
 8. **LDR-Modul: 4 Pins mit `D0` und Poti.** Nur der Digitalausgang umgeht den
    ADC2/WLAN-Konflikt des ESP32 (`10`).
 9. **Arcade-Taster: 12-V-Variante**, nicht 5 V.
+10. **Versand im Warenkorb gegenprüfen.** AliExpress gruppiert dort nach Händler und
+    zeigt den Versand pro Gruppe. Erwartet: zwei Beträge (TZT 5.93, JGY-Händler 5.95),
+    sonst gratis. Steht mehr da, hat ein Händler Stückpreis-Versand – dann lohnt
+    ein Blick auf die Alternativen.
 
 ---
 
@@ -477,8 +512,8 @@ Wenn nein → SwitchBot Bot, CHF 20.90, per Bluetooth direkt vom Pi.
 | Domain | Status |
 |---|---|
 | `de.aliexpress.com` – **Trefferlisten** | ✅ funktioniert, Preise in CHF, Lieferland CH |
-| `de.aliexpress.com` – **Produktseiten** | ❌ Bot-Schutz, Weiterleitung auf `/_____tmd_____/punish` |
-| `de.aliexpress.com` – **Verkäuferseiten** `/store/<id>` | ⚠️ kein Bot-Schutz, Seite lädt – Produktliste wird aber per JS nachgeladen und war beim ersten Versuch noch nicht da. Ungetestet. |
+| `de.aliexpress.com` – **Produktseiten** | ⚠️ **von Maxims Anschluss aus lesbar**, inkl. Varianten und Versand – aber nur begrenzt. Nach etwa 25 Abrufen kommt die Drosselung, dann die harte Sperre (`/_____tmd_____/punish`). Aus Rechenzentren ab dem ersten Aufruf gesperrt. |
+| `de.aliexpress.com` – **Verkäuferseiten** `/store/<id>` | ✅ **funktioniert samt Produktliste**, inkl. Suche im Shop. Kein Bot-Schutz beobachtet. Das ist der robusteste Zugang. |
 | `ae01.alicdn.com` | ✅ Bilder-CDN |
 | `www.bastelgarage.ch` | ✅ vollständig, servergerendert |
 | `www.berrybase.ch` | ✅ vollständig |

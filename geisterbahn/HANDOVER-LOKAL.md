@@ -257,7 +257,9 @@ Aus `HANDOVER.md` übernommen und in dieser Session bestätigt:
 | **MicroSD-Karten** | Vorhanden. |
 | Schraubklemmen-Breakouts, 10× ESP32, 100 m Kabel | **Behält er.** Kürzungsvorschläge dort abgelehnt. |
 | **Haftmagnet 15 kg statt 25 kg** | In dieser Session vorgeschlagen: die 25-kg-Klasse kostet CHF 14 statt CHF 2.50. Die Puppe wiegt ca. 3 kg. Alternative mit 30 kg steht in der Liste, falls er doch will. |
-| **Aufteilung in 9 Zoll-Pakete** | Aufgehoben. Bei CHF 213 Warenwert ist die Zollgrenze von CHF 62 gegenstandslos; Maxim will ausdrücklich **wenige Pakete**. |
+| **Aufteilung in 9 Zoll-Pakete** | Aufgehoben. Nicht wegen des Warenwerts, sondern weil AliExpress die Schweizer MwSt. an der Kasse erhebt – die Paketgrösse ist steuerlich irrelevant. |
+| **Gestaffelt bestellen («Gruppe D zuerst»)** | **Aufgehoben, war falsch.** Jeder Händler verschickt unabhängig; eine Bestellung mit allem ist für jedes einzelne Teil genau so schnell wie eine separate. Maxim hat das selbst bemerkt. Geblieben ist nur: **Winde sofort nach Ankunft testen.** |
+| **«MwSt. pro Artikeltyp und Bestellung»** | Gibt es nicht – MwSt. ist ein Prozentsatz vom Warenwert, Aufteilen ändert die Summe nicht. Am Artikeltyp hängt nur der *Satz* (8.1 % / 2.6 %). Falls Maxim nachfragt: als offizielle Quelle **BAZG** prüfen, die Liste stützt sich bisher nur auf «Preis inkl. MwSt.» auf den Produktseiten. |
 
 ---
 
